@@ -1,0 +1,4 @@
+https://eeethb.netlify.com/*  https://eeethb.rbind.io/:splat  301!
+http://eeethb.netlify.com/*   https://eeethb.rbind.io/:splat  301!
+
+http://eeethb.rbind.io/*      https://eeethb.rbind.io/:splat  301!
