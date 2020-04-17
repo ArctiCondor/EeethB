@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>xml on A minimal Hugo website</title>
+    <title>xml on Ethan Brockmann</title>
     <link>/tags/xml/</link>
-    <description>Recent content in xml on A minimal Hugo website</description>
+    <description>Recent content in xml on Ethan Brockmann</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 17 Apr 2020 00:00:00 +0000</lastBuildDate>
@@ -12,12 +12,12 @@
     
     
     <item>
-      <title>Parsing XML with</title>
+      <title>Parsing XML with ~~`xml2`~~ `tidyr`</title>
       <link>/post/2020/04/17/xml-ratee/</link>
       <pubDate>Fri, 17 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>/post/2020/04/17/xml-ratee/</guid>
-      <description>This post was typed on an iPhone, so please forgive any typos!xml2 tidyr</description>
+      <description>This post was typed on an iPhone, so please forgive any typos!</description>
     </item>
     
   </channel>
