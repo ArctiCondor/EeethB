@@ -1,45 +1,36 @@
 baseurl = "/"
 languageCode = "en-us"
-title = "Ethan Brockmann"
+title = "A minimal Hugo website"
 theme = "hugo-xmin"
 googleAnalytics = ""
 disqusShortname = ""
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+footnotereturnlinkcontents = "↩"
 
 [permalinks]
-    post = "/:year/:month/:day/:slug/"
+    post = "/post/:year/:month/:day/:slug/"
+    note = "/note/:year/:month/:day/:slug/"
 
+[[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
 [[menu.main]]
     name = "About"
     url = "/about/"
+    weight = 2
 [[menu.main]]
-    name = "GitHub"
-    url = "https://github.com/ArctiCondor"
+    name = "Categories"
+    url = "/categories/"
+    weight = 3
 [[menu.main]]
-    name = "Twitter"
-    url = "https://twitter.com/EeethB"
+    name = "Tags"
+    url = "/tags/"
+    weight = 4
 [[menu.main]]
-    name = "RStudio Community"
-    url = "https://community.rstudio.com/u/ArctiCondor"
+    name = "Subscribe"
+    url = "/index.xml"
 
 [params]
     description = "A website built through Hugo and blogdown."
-
-    # options for highlight.js (version, additional languages, and theme)
-    highlightjsVersion = "9.12.0"
-    highlightjsCDN = "//cdnjs.cloudflare.com/ajax/libs"
-    highlightjsLang = ["r", "yaml"]
-    highlightjsTheme = "github"
-
-    MathJaxCDN = "//cdnjs.cloudflare.com/ajax/libs"
-    MathJaxVersion = "2.7.5"
-
-    # path to the favicon, under "static"
-    favicon = "favicon.ico"
-
-    [params.logo]
-    url = "logo.png"
-    width = 50
-    height = 50
-    alt = "Logo"
-
+    footer = "&copy; [Yihui Xie](https://yihui.name) 2017 -- 2019 | [Github](https://github.com/yihui) | [Twitter](https://twitter.com/xieyihui)"
