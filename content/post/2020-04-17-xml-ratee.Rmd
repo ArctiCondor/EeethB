@@ -1,5 +1,5 @@
 ---
-title: Parsing XML with {xml2}
+title: Parsing XML with ~~xml2~~ `tidyr`
 author: Ethan Brockmann
 date: '2020-04-17'
 slug: xml-ratee
