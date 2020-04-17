@@ -10,6 +10,5 @@ tags:
   - xml2
 ---
 
-This post was typed on an iPhone, so please forgive any typos!
-
+This post was typed on an iPhone, so please forgive any typos!!
 
