@@ -1,5 +1,5 @@
 ---
-title: Parsing XML with ~~xml2~~ `tidyr`
+title: Parsing XML with 
 author: Ethan Brockmann
 date: '2020-04-17'
 slug: xml-ratee
@@ -11,4 +11,4 @@ tags:
 ---
 
 This post was typed on an iPhone, so please forgive any typos!
-
+~~`xml2`~~ `tidyr`
