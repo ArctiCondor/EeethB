@@ -1,0 +1,14 @@
+---
+title: Parsing XML with {xml2}
+author: Ethan Brockmann
+date: '2020-04-17'
+slug: xml-ratee
+categories:
+  - R
+tags:
+  - xml
+  - xml2
+---
+
+This post was typed on an iPhone, so please forgive any typos!
+
