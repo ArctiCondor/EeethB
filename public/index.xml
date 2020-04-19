@@ -17,8 +17,7 @@
       <pubDate>Fri, 17 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>/post/2020/04/17/xml-ratee/</guid>
-      <description>This post was typed on an iPhone, so please forgive any typos!!
-# devtools::install_github(&amp;quot;tidyverse/dplyr&amp;quot;)library(xml2) # I though you said we weren&amp;#39;t using xml2...suppressPackageStartupMessages(library(tidyr))suppressPackageStartupMessages(library(dplyr))library(tibble)library(gt)ratee &amp;lt;- tempfile(fileext = &amp;quot;.xml&amp;quot;)download.file(&amp;quot;https://raw.github.com/ArctiCondor/edgexml/master/XML XSD/DDC_RATEE_XSD_XML_083019/RATransferElementsExtract.xml&amp;quot;,destfile = ratee)tbl_ratee &amp;lt;- read_xml(ratee) %&amp;gt;%xml2::as_list() %&amp;gt;%as_tibble() %&amp;gt;%unnest_wider(raTransferReport)tbl_ratee %&amp;gt;% gt()html {font-family: -apple-system, BlinkMacSystemFont, &#39;Segoe UI&#39;, Roboto, Oxygen, Ubuntu, Cantarell, &#39;Helvetica Neue&#39;, &#39;Fira Sans&#39;, &#39;Droid Sans&#39;, Arial, sans-serif;}#gmwuuogdnh .</description>
+      <description>When I first discovered xml2, I was thrilled. A product from RStudio that works with XML! So great! I had some large XML documents I had to parse at work, and my best solution (before we got RStudio) was to drag them one at a time into Microsoft Excel and let its parser convert each into one big, ugly table. Then I was left to either create some elaborate formulas to extract the relevant info, or pass the table on to SAS and try to wrangle it there.</description>
     </item>
     
     <item>

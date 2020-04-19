@@ -10,22 +10,27 @@ tags:
   - xml2
 ---
 
-This post was typed on an iPhone, so please forgive any typos!!
+When I first discovered `xml2`, I was thrilled. A product from RStudio that works with XML! So great! I had some large XML documents I had to parse at work, and my best solution (before we got RStudio) was to drag them one at a time into Microsoft Excel and let its parser convert each into one big, ugly table. Then I was left to either create some elaborate formulas to extract the relevant info, or pass the table on to SAS and try to wrangle it there. Further, the biggest (and arguably most important) XMLs, which contained the most granular data, were over a million rows when parsed by Excel, so they just failed.
 
-
+Enter `xml2`. After reading through the documentation and searching SO and the RStudio Community, I felt...disappointed. It seemed that to write something using `xml2`, you had to know the structure of the XML ahead of time and extract the nodes you needed. I'm prety unfamiliar with XML, but I am comfortable working with rectangular data, so I wanted something that could just convert an entire XML document into something rectangular. Then I could use my usual tidy tools that I love so much. Finally I found [this post](https://community.rstudio.com/t/how-to-convert-a-partly-nested-xml-to-data-frame-using-xml2/36705/4) on the RStudio Community, which is the method I will demonstrate in this post.
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(collapse = TRUE, warning = FALSE, message = FALSE)
 ```
 
+I use `dplyr`'s new `across()` function, so I need the development version. I had some issue getting it set up; ultimately I had to install the development version of `tidyr` explicitly and then install `dplyr`.
+
 ```{r pkgs}
-# devtools::install_github("tidyverse/dplyr")
+# remotes::install_github("r-lib/rlang")
+# remotes::install_github("tidyverse/dplyr")
 library(xml2) # I though you said we weren't using xml2...
 suppressPackageStartupMessages(library(tidyr))
 suppressPackageStartupMessages(library(dplyr))
 library(tibble)
 library(gt)
 ```
+
+First we need to find our data. The XML I'm working with comes from something called the External Data Gathering Environment (EDGE) Server, which is used by the federal government in the United States to collect data from health insurance issuers. The data is used for the risk adjustment program under the Affordable Care Act (ACA). You can read a more in-depth summary about all this in my [`edgedata` package](https://github.com/arcticondor/edgedata). The Centers for Medicare and Medicaid Services (CMS) provides sample XML files [on REGTAP](https://www.regtap.info/reg_library_openfile.php?id=2979&type=l) if you have an account, but I've downloaded them and put them on my Github in order to write this post (And possibly to make another package with an API for processing them).
 
 ```{r get-data}
 ratee <- tempfile(fileext = ".xml")
@@ -36,6 +41,8 @@ download.file(
 )
 ```
 
+This is the only section we actually use `xml2`. The two functions used are `read_xml()`, which does exactly what it sounds like, and `xml2::as_list()`, which converts an XML document to a nested tibble (Just what I was looking for). I've specified the package for `as_list()` so that I remember that this is not `rlang::as_list()`. The tibble that comes out of `as_tibble()` is the entire XML nested into the root (raTransferReport), so we use `tidyr::unnest_wider()` to break it out into a full tibble. Throughout this entire post there are tables that are large and unwieldy, so I'm using the awesome new `gt` package to display them nicely.
+
 ```{r to-tibble}
 tbl_ratee <- read_xml(ratee) %>%
   xml2::as_list() %>%
@@ -45,6 +52,8 @@ tbl_ratee <- read_xml(ratee) %>%
 tbl_ratee %>% 
   gt()
 ```
+
+So now we have a tibble, but it doesn't look very tidy. There are all these `NA`s
 
 ```{r header}
 tbl_head <- tbl_ratee %>%
