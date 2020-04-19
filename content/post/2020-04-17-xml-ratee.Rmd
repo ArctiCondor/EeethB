@@ -1,7 +1,7 @@
 ---
 title: Parsing XML with ~~`xml2`~~ `tidyr`
 author: Ethan Brockmann
-date: '2020-04-17'
+date: "2020-04-17"
 slug: xml-ratee
 categories:
   - R
@@ -11,4 +11,75 @@ tags:
 ---
 
 This post was typed on an iPhone, so please forgive any typos!!
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE, warning = FALSE, message = FALSE)
+```
+
+```{r pkgs}
+# devtools::install_github("tidyverse/dplyr")
+library(xml2) # I though you said we weren't using xml2...
+suppressPackageStartupMessages(library(tidyr))
+suppressPackageStartupMessages(library(dplyr))
+library(tibble)
+library(gt)
+```
+
+```{r get-data}
+ratee <- tempfile(fileext = ".xml")
+
+download.file(
+  "https://raw.github.com/ArctiCondor/edgexml/master/XML XSD/DDC_RATEE_XSD_XML_083019/RATransferElementsExtract.xml",
+  destfile = ratee
+)
+```
+
+```{r to-tibble}
+tbl_ratee <- read_xml(ratee) %>%
+  xml2::as_list() %>%
+  as_tibble() %>%
+  unnest_wider(raTransferReport)
+
+tbl_ratee %>% 
+  gt()
+```
+
+```{r header}
+tbl_head <- tbl_ratee %>%
+  select(outboundFileIdentifier:issuerIdentifier) %>%
+  filter(outboundFileIdentifier != "NA") %>%
+  unnest(cols = names(.))
+
+tbl_head %>% 
+  gt()
+```
+
+```{r body}
+tbl_body <- tbl_ratee %>%
+  select(planIdentifier:includedRatingAreaCategory) %>%
+  filter(planIdentifier != "NA") %>%
+  unnest(1:4) %>%
+  pivot_longer(cols = starts_with("includedRatingAreaCategory")) %>%
+  select(-name) %>%
+  filter(value != "NA")
+
+tbl_body %>% 
+  gt()
+```
+
+```{r main}
+tbl_main <- tbl_body %>%
+  unnest_wider(value) %>%
+  unnest(cols = names(.)) %>%
+  unnest(cols = names(.))
+
+tbl_main %>% 
+  mutate(across(enrolleeMemberMonths:planAgeAvePremium, as.numeric)) %>% 
+  gt() %>% 
+  fmt_number(columns = 6:last_col())
+
+```
+
 
