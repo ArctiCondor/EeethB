@@ -1,7 +1,7 @@
 ---
 title: Parsing XML with ~~`xml2`~~ `tidyr`
 author: Ethan Brockmann
-date: "2020-04-17"
+date: "2020-04-23"
 slug: xml-ratee
 categories:
   - R
@@ -30,25 +30,21 @@ library(tibble)
 library(gt)
 ```
 
-First we need to find our data. The XML I'm working with comes from something called the External Data Gathering Environment (EDGE) Server, which is used by the federal government in the United States to collect data from health insurance issuers. The data is used for the risk adjustment program under the Affordable Care Act (ACA). You can read a more in-depth summary about all this in my [`edgedata` package](https://github.com/arcticondor/edgedata). The Centers for Medicare and Medicaid Services (CMS) provides sample XML files [on REGTAP](https://www.regtap.info/reg_library_openfile.php?id=2979&type=l) if you have an account, but I've downloaded them and put them on my Github in order to write this post (And possibly to make another package with an API for processing them).
+First we need to find our data. The XML I'm working with comes from something called the External Data Gathering Environment (EDGE) Server, which is used by the federal government in the United States to collect data from health insurance issuers. The data is used for the risk adjustment program under the Affordable Care Act (ACA). You can read a more in-depth summary about all this in my [`edgedata` package](https://github.com/arcticondor/edgedata) README. The Centers for Medicare and Medicaid Services (CMS) provides sample XML files [on REGTAP](https://www.regtap.info/reg_library_openfile.php?id=2979&type=l) if you have an account, but I've downloaded them and put them on my Github in order to write this post (And possibly to make another package with an API for processing them).
 
-```{r get-data, attr.output='style="max-height: 100px;"'}
-# For online mode
-# ratee <- tempfile(fileext = ".xml")
-# 
-# download.file(
-#   "https://raw.github.com/ArctiCondor/edgexml/master/XML XSD/DDC_RATEE_XSD_XML_083019/RATransferElementsExtract.xml",
-#   destfile = ratee
-# )
+```{r get-data, attr.output='style="max-height: 200px;"'}
+ratee <- tempfile(fileext = ".xml")
 
-# For offline mode
-ratee <- "C:/Users/Ethan/Documents/edge/edgexml/XML XSD/DDC_RATEE_XSD_XML_083019/RATransferElementsExtract.xml"
+download.file(
+  "https://raw.github.com/ArctiCondor/edgexml/master/XML XSD/DDC_RATEE_XSD_XML_083019/RATransferElementsExtract.xml",
+  destfile = ratee
+)
 
 cat(stringr::str_replace_all(readr::read_file(ratee), ">", ">\n"))
 ```
 
 
-This is the only section we actually use `xml2`. The two functions used are `read_xml()`, which does exactly what it sounds like, reads and XML document, and `xml2::as_list()`, which converts an XML document to a nested tibble (Just what I was looking for). I've specified the package for `as_list()` so that I remember that this is not `rlang::as_list()`. The tibble that comes out of `as_tibble()` is the entire XML nested into the root (raTransferReport), so we use `tidyr::unnest_wider()` to break it out into a full tibble. Throughout this entire post there are tables that are large and unwieldy, so I'm using the awesome new `gt` package to display them nicely.
+This is the only section we actually use `xml2`. The two functions used are `read_xml()`, which does exactly what it sounds like, reads an XML document, and `xml2::as_list()`, which converts an XML document to a nested tibble (Just what I was looking for). I've specified the package for `as_list()` so that I remember that this is not `rlang::as_list()`. The tibble that comes out of `as_tibble()` is the entire XML nested into the root (raTransferReport), so we use `tidyr::unnest_wider()` to break it out into a full tibble. Throughout this entire post there are tables that are large and unwieldy, so I'm using the awesome `gt` package to display them nicely.
 
 ```{r to-tibble}
 tbl_ratee <- read_xml(ratee) %>%
@@ -104,4 +100,4 @@ tbl_main %>%
 
 ```
 
-
+Okay, this is what I wanted! We have member months and the main variables used in the risk adjustment formula. If this was a RATEE file for a real issuer, this could be used to check against internal data to make sure that the data on the EDGE server was accurate. I do want to investigate one strange thing: It looks like there are only 3 rating areas, but they're numbered 001, 002, and 006. But when I scroll through the full XML text above, it looks like that is accurate! I don't know why CMS made a sample document with these strange area labels, but at least we're not dropping information somewhere.
