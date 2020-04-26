@@ -27,6 +27,9 @@ footnotereturnlinkcontents = "↩"
     name = "Tags"
     url = "/tags/"
     weight = 4
+[[menu.main]]
+    name = "Resume"
+    url = "/resume.pdf"
 
 [params]
     description = "Ethan Brockmann's personal website"

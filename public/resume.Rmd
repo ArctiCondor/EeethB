@@ -1,0 +1,66 @@
+---
+name: Ethan Brockmann
+address: "740 Hartwood, Brandon, MS 39042"
+phone: (920) 728-5600
+email: "ethanbrockmann@gmail.com"
+github: ArctiCondor
+community: ArctiCondor
+date: "`r format(Sys.time(), '%B %Y')`"
+output: vitae::awesomecv
+---
+
+# Work Experience
+
+**Actuarial Analyst**. BlueCross BlueShield of Mississippi. Flowood, MS. June 2017 – Present 
+
+  - Entrusted with leading the R and data science movement at the company 
+
+  - Became the go-to analyst for data requests from the CFO and CEO 
+
+  - Created organization’s first R Markdown report, first Shiny application, and first package  
+
+  - Achieved this while maintaining core actuarial work such as researching data sources and gathering data, verifying data integrity, updating actuarial models, and preparing financial, enrollment, and ad hoc reports 
+
+**Actuarial Student Intern**. BlueCross BlueShield of Mississippi. Flowood, MS. May 2016 – August 2016 
+
+  - Assisted actuarial personnel in core actuarial functions 
+
+  - Capstone project involved building member risk profiles with diagnosis codes and searching for suspected missing codes 
+
+**Math Tutor**. Mississippi State University. Starkville, MS. November 2014 – December 2015 
+
+  - Provided additional help to students in historically difficult classes 
+
+  - Helped one student improve 30% from test 1 to test 2 
+
+  - Tutored students in algebra, trigonometry, calculus, linear algebra, basic mathematical proof classes, and chemistry 
+
+# Programming Experience
+
+  - Author and maintainer of the [`edgedata`](https://github.com/ArctiCondor/edgedata) package on Github
+
+  - Experience developing R Markdown documents, Shiny applications, and an internal organizational R package
+  
+  - Current position involves updating Excel models with regular VBA development
+
+  - University classes and data analysis in Python 
+
+  - Built data structures such as binary trees and linked lists in C++ 
+
+  - Authored research paper and senior seminar papers in \LaTeX
+
+# Education
+
+Bachelor of Science in Mathematics. Minor in Computer Science. Mississippi State University, Starkville, MS. GPA 3.92/4.00. May 2017 
+
+Passed actuarial exams P, FM, IFM, SRM, and LTAM
+
+# Research Experience
+
+Undergraduate Research Project in Graph Theory. Mississippi State University. August 2015-December 2015 
+
+  - Worked with the independence polynomials of claw free graphs and trees 
+
+  - Paper available here: https://osebje.famnit.upr.si/~russ.woodroofe/ethan-brockmann.pdf 
+
+  - Sage code available here: https://osebje.famnit.upr.si/~russ.woodroofe/ethan-brockmann.sage
