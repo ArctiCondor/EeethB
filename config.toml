@@ -1,6 +1,6 @@
 baseurl = "/"
 languageCode = "en-us"
-title = "Ethan Brockmann"
+title = "yet another rstats blog"
 theme = "hugo-xmin"
 googleAnalytics = ""
 disqusShortname = ""
@@ -27,10 +27,7 @@ footnotereturnlinkcontents = "↩"
     name = "Tags"
     url = "/tags/"
     weight = 4
-[[menu.main]]
-    name = "Subscribe"
-    url = "/index.xml"
 
 [params]
     description = "Ethan Brockmann's personal website"
-    footer = "&copy; [Yihui Xie](https://yihui.name) 2017 -- 2019 | [Github](https://github.com/yihui) | [Twitter](https://twitter.com/xieyihui)"
+    footer = "[Github](https://github.com/ArctiCondor) | [Twitter](https://twitter.com/EeethB) | [RStudio Community](https://community.rstudio.com/u/ArctiCondor) | ethanbrockmann@gmail.com"
