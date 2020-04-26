@@ -6,7 +6,7 @@
     <description>Recent content on yet another rstats blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 23 Apr 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 26 Apr 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>About</title>
       <link>/about/</link>
-      <pubDate>Thu, 23 Apr 2020 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 26 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>/about/</guid>
       <description>About Me I am an actuarial analyst at BlueCross BlueShield of Mississippi, where I build and manage pricing and forecasting models using SAS and Excel, as well as a variety of regular and ad hoc data reporting. I&amp;rsquo;m interested in any jobs that use more R and less no SAS or Excel. I love R and the R community, and I recently contributed to the R community with my first public package: edgedata, now on CRAN.</description>
