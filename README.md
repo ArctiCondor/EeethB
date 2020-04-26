@@ -1,4 +1,4 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/11d96229-d530-4806-9f36-1b0dac7183c4/deploy-status)](https://app.netlify.com/sites/eeethb/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ffdcc14f-34d8-494d-9635-6225ca4a98a5/deploy-status)](https://app.netlify.com/sites/eeethb/deploys)
 
 ## EeethB.rbind.io
 
