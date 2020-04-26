@@ -1,0 +1,209 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+% Awesome CV LaTeX Template for CV/Resume
+%
+% This template has been downloaded from:
+% https://github.com/posquit0/Awesome-CV
+%
+% Author:
+% Claud D. Park <posquit0.bj@gmail.com>
+% http://www.posquit0.com
+%
+%
+% Adapted to be an Rmarkdown template by Mitchell O'Hara-Wild
+% 23 November 2018
+%
+% Template license:
+% CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
+%
+%-------------------------------------------------------------------------------
+% CONFIGURATIONS
+%-------------------------------------------------------------------------------
+% A4 paper size by default, use 'letterpaper' for US letter
+\documentclass[11pt, a4paper]{awesome-cv}
+
+% Configure page margins with geometry
+\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
+
+% Specify the location of the included fonts
+\fontdir[fonts/]
+
+% Color for highlights
+% Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
+%                 awesome-nephritis, awesome-concrete, awesome-darknight
+
+\colorlet{awesome}{awesome-red}
+
+% Colors for text
+% Uncomment if you would like to specify your own color
+% \definecolor{darktext}{HTML}{414141}
+% \definecolor{text}{HTML}{333333}
+% \definecolor{graytext}{HTML}{5D5D5D}
+% \definecolor{lighttext}{HTML}{999999}
+
+% Set false if you don't want to highlight section with awesome color
+\setbool{acvSectionColorHighlight}{true}
+
+% If you would like to change the social information separator from a pipe (|) to something else
+\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
+
+\def\endfirstpage{\newpage}
+
+%-------------------------------------------------------------------------------
+%	PERSONAL INFORMATION
+%	Comment any of the lines below if they are not required
+%-------------------------------------------------------------------------------
+% Available options: circle|rectangle,edge/noedge,left/right
+
+\name{Ethan Brockmann}{}
+
+\address{740 Hartwood, Brandon, MS 39042}
+
+\mobile{(920) 728-5600}
+\email{\href{mailto:ethanbrockmann@gmail.com}{\nolinkurl{ethanbrockmann@gmail.com}}}
+\homepage{eeethb.rbind.io}
+\github{EeethB}
+\twitter{EeethB}
+
+% \gitlab{gitlab-id}
+% \stackoverflow{SO-id}{SO-name}
+% \skype{skype-id}
+% \reddit{reddit-id}
+
+
+\usepackage{booktabs}
+
+% Templates for detailed entries
+% Arguments: what when with where why
+\usepackage{etoolbox}
+\def\detaileditem#1#2#3#4#5{%
+\cventry{#1}{#3}{#4}{#2}{\ifx#5\empty\else{\begin{cvitems}#5\end{cvitems}}\fi}\ifx#5\empty{\vspace{-4.0mm}}\else\fi}
+\def\detailedsection#1{\begin{cventries}#1\end{cventries}}
+
+% Templates for brief entries
+% Arguments: what when with
+\def\briefitem#1#2#3{\cvhonor{}{#1}{#3}{#2}}
+\def\briefsection#1{\begin{cvhonors}#1\end{cvhonors}}
+
+\providecommand{\tightlist}{%
+	\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+%------------------------------------------------------------------------------
+
+
+
+\begin{document}
+
+% Print the header with above personal informations
+% Give optional argument to change alignment(C: center, L: left, R: right)
+\makecvheader
+
+% Print the footer with 3 arguments(<left>, <center>, <right>)
+% Leave any of these blank if they are not needed
+% 2019-02-14 Chris Umphlett - add flexibility to the document name in footer, rather than have it be static Curriculum Vitae
+\makecvfooter
+  {April 2020}
+    {Ethan Brockmann~~~·~~~Curriculum Vitae}
+  {\thepage}
+
+
+%-------------------------------------------------------------------------------
+%	CV/RESUME CONTENT
+%	Each section is imported separately, open each file in turn to modify content
+%------------------------------------------------------------------------------
+
+
+
+\hypertarget{work-experience}{%
+\section{Work Experience}\label{work-experience}}
+
+\textbf{Actuarial Analyst}. BlueCross BlueShield of Mississippi.
+Flowood, MS. June 2017 -- Present
+
+\begin{itemize}
+\item
+  Entrusted with leading the R and data science movement at the company
+\item
+  Became the go-to analyst for data requests from the CFO and CEO
+\item
+  Created organization's first R Markdown report, first Shiny
+  application, and first package
+\item
+  Achieved this while maintaining core actuarial work such as
+  researching data sources and gathering data, verifying data integrity,
+  updating actuarial models, and preparing financial, enrollment, and ad
+  hoc reports
+\end{itemize}
+
+\textbf{Actuarial Student Intern}. BlueCross BlueShield of Mississippi.
+Flowood, MS. May 2016 -- August 2016
+
+\begin{itemize}
+\item
+  Assisted actuarial personnel in core actuarial functions
+\item
+  Capstone project involved building member risk profiles with diagnosis
+  codes and searching for suspected missing codes
+\end{itemize}
+
+\textbf{Math Tutor}. Mississippi State University. Starkville, MS.
+November 2014 -- December 2015
+
+\begin{itemize}
+\item
+  Provided additional help to students in historically difficult classes
+\item
+  Helped one student improve 30\% from test 1 to test 2
+\item
+  Tutored students in algebra, trigonometry, calculus, linear algebra,
+  basic mathematical proof classes, and chemistry
+\end{itemize}
+
+\hypertarget{programming-experience}{%
+\section{Programming Experience}\label{programming-experience}}
+
+\begin{itemize}
+\item
+  Author and maintainer of the
+  \href{https://github.com/ArctiCondor/edgedata}{\texttt{edgedata}}
+  package on Github
+\item
+  Experience developing R Markdown documents, Shiny applications, and an
+  internal organizational R package
+\item
+  Current position involves updating Excel models with regular VBA
+  development
+\item
+  University classes and data analysis in Python
+\item
+  Built data structures such as binary trees and linked lists in C++
+\item
+  Authored research paper and senior seminar papers in \LaTeX
+\end{itemize}
+
+\hypertarget{education}{%
+\section{Education}\label{education}}
+
+Bachelor of Science in Mathematics. Minor in Computer Science.
+Mississippi State University, Starkville, MS. GPA 3.92/4.00. May 2017
+
+Passed actuarial exams P, FM, IFM, SRM, and LTAM
+
+\hypertarget{research-experience}{%
+\section{Research Experience}\label{research-experience}}
+
+Undergraduate Research Project in Graph Theory. Mississippi State
+University. August 2015-December 2015
+
+\begin{itemize}
+\item
+  Worked with the independence polynomials of claw free graphs and trees
+\item
+  Paper available here:
+  \url{https://osebje.famnit.upr.si/~russ.woodroofe/ethan-brockmann.pdf}
+\item
+  Sage code available here:
+  \url{https://osebje.famnit.upr.si/~russ.woodroofe/ethan-brockmann.sage}
+\end{itemize}
+
+\end{document}

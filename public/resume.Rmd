@@ -3,8 +3,10 @@ name: Ethan Brockmann
 address: "740 Hartwood, Brandon, MS 39042"
 phone: (920) 728-5600
 email: "ethanbrockmann@gmail.com"
-github: ArctiCondor
-community: ArctiCondor
+github: EeethB
+twitter: EeethB
+www: eeethb.rbind.io
+community: EeethB
 date: "`r format(Sys.time(), '%B %Y')`"
 output: vitae::awesomecv
 ---
