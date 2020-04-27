@@ -9,4 +9,6 @@ tags:
   - opinion
 ---
 
-"The R community is so welcoming!"
+*The R community is so welcoming!*
+
+This is a statement I hear *and feel* almost every day.
