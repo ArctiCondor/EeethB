@@ -1,0 +1,12 @@
+---
+title: On the Intolerance of R
+author: ''
+date: '2020-04-27'
+slug: r-intolerance
+categories:
+  - R
+tags:
+  - opinion
+---
+
+"The R community is so welcoming!"
