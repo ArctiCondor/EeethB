@@ -25,7 +25,7 @@ output: vitae::awesomecv
 
   - University classes building data structures such as binary trees and linked lists in C++ 
 
-  - Authored research paper and senior seminar papers in \LaTeX
+  - Authored research paper and senior seminar papers in \LaTeX with Lyx
 
 # Education
 
