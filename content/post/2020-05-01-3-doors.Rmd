@@ -1,0 +1,13 @@
+---
+draft: TRUE
+title: The 3 Doors Problem
+author: ''
+date: '2020-05-01'
+slug: 3-doors
+categories:
+  - R
+tags:
+  - simulation
+---
+
+Draft post for simulating the 3 doors problem
