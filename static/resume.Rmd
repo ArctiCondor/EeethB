@@ -19,6 +19,8 @@ output: vitae::awesomecv
 
   - Experience with R Markdown and Shiny
   
+  - Familiarity with git and Github workflows
+  
   - Experience creating, reviewing, and updating large Excel models, often including VBA development
 
   - University classes and data analysis in Python 
@@ -102,4 +104,6 @@ Undergraduate Research Project in Graph Theory. Mississippi State University. Au
  - Strong technical review skills
  
  - Experience working remote
+ 
+ - Independent and driven
  
