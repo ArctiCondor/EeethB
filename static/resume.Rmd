@@ -11,23 +11,25 @@ date: "`r format(Sys.time(), '%B %Y')`"
 output: vitae::awesomecv
 ---
 
-# Programming Experience - R, Python, C++, SQL, VBA
+# Programming Experience - R, Python, C, C++, SQL, VBA
 
   - Author and maintainer of the [`edgedata`](https://github.com/ArctiCondor/edgedata) package on CRAN
   
-  - Author and maintainer of an internal organizational R package for safely working with our database
+  - Author and maintainer of an internal organizational R package for safely working with company's database
 
   - Experience with R Markdown and Shiny
   
   - Familiarity with git and Github workflows
   
+  - Strong SQL querying skills on large (>10,000,000 rows) data sets
+  
   - Experience creating, reviewing, and updating large Excel models, often including VBA development
 
-  - University classes and data analysis in Python 
+  - Upper level university class designing a real-use interface for Fedex with Python
 
-  - University classes building data structures such as binary trees and linked lists in C++ 
-
-  - Authored research paper and senior seminar papers in \LaTeX with Lyx
+  - University classes building data structures such as binary trees and linked lists in C++
+  
+  - Authored research paper and other senior seminar papers in \LaTeX with LyX
 
 # Education
 
@@ -48,21 +50,23 @@ Undergraduate Research Project in Graph Theory. Mississippi State University. Au
 # Work Experience
 
 **Actuarial Analyst**. BlueCross BlueShield of Mississippi. Flowood, MS. June 2017 – Present 
+  
+  - Decision-maker for all things related to EDGE server and risk adjustment
 
   - Entrusted with leading the R and data science movement at the company 
-
-  - Created organization’s first R Markdown report, first Shiny application, and first package  
   
-  - Achieved this while maintaining core actuarial work such as researching data sources and gathering data, verifying data integrity, updating actuarial models, and preparing financial, enrollment, and ad hoc reports
+  - Created organization's first R Markdown report, first Shiny application, and first package
+  
+  - Detailed review of colleagues' technical work
 
   - Go-to analyst for data requests from the CFO and CEO
 
-  - Lead analyst on individual ACA rate filings
-  
-  - Team lead for all EDGE server and risk adjustment projects
-  
-  - Review experience across multiple core areas of actuarial work, including pricing, reserving, and trend
+  - Steadily entrusted with more responsibility and decision-making
 
+  - Due for a promotion to senior analyst in June
+  
+  - Passion for automating as many things as possible
+  
 **Actuarial Student Intern**. BlueCross BlueShield of Mississippi. Flowood, MS. May 2016 – August 2016 
 
   - Assisted actuarial personnel in core actuarial functions 
@@ -73,10 +77,8 @@ Undergraduate Research Project in Graph Theory. Mississippi State University. Au
 
   - Provided additional help to students in historically difficult classes 
 
-  - Helped one student improve 30% from test 1 to test 2 
-
   - Tutored students in algebra, trigonometry, calculus, linear algebra, basic mathematical proof classes, and chemistry 
-  
+   
 **Rock Climbing Guide**. Mississippi State University. Starkville, MS. May - August 2015
 
   - Provided support, guidance, and belay services to patrons of the indoor climbing wall
