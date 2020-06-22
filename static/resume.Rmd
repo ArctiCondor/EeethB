@@ -53,37 +53,39 @@ Undergraduate Research Project in Graph Theory. Mississippi State University. Au
 
 **Actuarial Analyst**. BlueCross BlueShield of Mississippi. Flowood, MS. June 2017 – Present 
   
-  - Decision-maker for all things related to EDGE server and risk adjustment
+  - Go-to analyst for data requests from the CFO and CEO
   
-  - Lead analyst for individual ACA rate filings for 3 years
+  - Regular written and occasional oral communication with company management
   
-  - Exposure to reserves, trend, and group and individual pricing
+  - Created an interactive, longitudinal report to track the predictive power of a licensed predictive model
+  
+  - Working knowledge of many statistical methods
+  
+  - Decision-maker for all things related to EDGE server and risk adjustment, saving the company millions of dollars each year
 
   - Entrusted with leading the R and data science movement at the company
   
-  - Working knowledge of select statistical learning methods, such as linear regression and random forests
+  - Author and maintainer of an internal R package to safely interact with the company's database
   
-  - Theoretical understanding of many more statisticall learning methods
+  - Daily technical review of colleagues' work
   
-  - Created organization's first R Markdown report, first Shiny application, and first package
-  
-  - Detailed review of colleagues' technical work
-
-  - Go-to analyst for data requests from the CFO and CEO
-  
-  - Passion for automating as many things as possible
+  - Champion or runner-up in each of the last 3 company-wide Ultimate Frisbee tournaments
   
 **Actuarial Student Intern**. BlueCross BlueShield of Mississippi. Flowood, MS. May 2016 – August 2016 
 
   - Assisted actuarial personnel in core actuarial functions 
 
-  - Capstone project involved building member risk profiles with diagnosis codes and searching for suspected missing codes 
+  - Capstone project involved building member risk profiles with diagnosis codes and searching for suspected missing codes
+  
+  - Presented findings to the CFO
 
 **Math Tutor**. Mississippi State University. Starkville, MS. November 2014 – December 2015 
 
   - Provided additional help to students in historically difficult classes 
 
   - Tutored students in algebra, trigonometry, calculus, linear algebra, basic mathematical proof classes, and chemistry 
+  
+  - Helped one student improve 30% from the first to the second test
    
 **Rock Climbing Guide**. Mississippi State University. Starkville, MS. May - August 2015
 
