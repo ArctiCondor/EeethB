@@ -16,18 +16,20 @@ output: vitae::awesomecv
   - Author and maintainer of the [`edgedata`](https://github.com/ArctiCondor/edgedata) package on CRAN
   
   - Author and maintainer of an internal organizational R package for safely working with company's database
-
-  - Experience with R Markdown and Shiny
   
   - Familiarity with git and Github workflows
   
-  - Strong SQL querying skills on large (>10,000,000 rows) data sets
+  - 3 years using SQL and SAS to query large (>10,000,000 rows) data sets and compile insightful reports for company management
+  
+  - 1.5 years of experience using Python and R for data science
+  
+  - 1.5 years of experience building static and interactive reports with R Markdown, Jupyter notebooks, and R Shiny
+
+  - Front-end and back-end university classes in C++ and Python
   
   - Experience creating, reviewing, and updating large Excel models, often including VBA development
-
-  - Upper level university class designing a real-use interface for Fedex with Python
-
-  - University classes building data structures such as binary trees and linked lists in C++
+  
+  - Familiarity with C, HTML, CSS, and Javascript
   
   - Authored research paper and other senior seminar papers in \LaTeX with LyX
 
@@ -52,18 +54,22 @@ Undergraduate Research Project in Graph Theory. Mississippi State University. Au
 **Actuarial Analyst**. BlueCross BlueShield of Mississippi. Flowood, MS. June 2017 – Present 
   
   - Decision-maker for all things related to EDGE server and risk adjustment
+  
+  - Lead analyst for individual ACA rate filings for 3 years
+  
+  - Exposure to reserves, trend, and group and individual pricing
 
-  - Entrusted with leading the R and data science movement at the company 
+  - Entrusted with leading the R and data science movement at the company
+  
+  - Working knowledge of select statistical learning methods, such as linear regression and random forests
+  
+  - Theoretical understanding of many more statisticall learning methods
   
   - Created organization's first R Markdown report, first Shiny application, and first package
   
   - Detailed review of colleagues' technical work
 
   - Go-to analyst for data requests from the CFO and CEO
-
-  - Steadily entrusted with more responsibility and decision-making
-
-  - Due for a promotion to senior analyst in June
   
   - Passion for automating as many things as possible
   
