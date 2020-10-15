@@ -21,7 +21,7 @@ output: vitae::awesomecv
   
   - 3 years using SQL and SAS to query large (>10,000,000 rows) data sets and compile insightful reports for company management
   
-  - 1.5 years of experience using Python and R for data science
+  - 1.5 years of experience using Python and R for data science and data viz
   
   - 1.5 years of experience building static and interactive reports with R Markdown, Jupyter notebooks, and R Shiny
 
@@ -116,4 +116,6 @@ Undergraduate Research Project in Graph Theory. Mississippi State University. Au
  - Experience working remote
  
  - Independent and driven
+ 
+ - 4 years of high school Spanish, 4 semesters of college Russian, previously fluent in Lithuanian
  

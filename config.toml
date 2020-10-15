@@ -32,7 +32,7 @@ footnotereturnlinkcontents = "↩"
     url = "/resume.pdf"
     
 [[menu.main]]
-    name = "Apps"
+    name = "Apps (Not Secure)"
     url = "http://10.0.0.149"
 
 [params]
