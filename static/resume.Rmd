@@ -7,6 +7,8 @@ github: EeethB
 twitter: EeethB
 www: eeethb.rbind.io
 community: EeethB
+angellist: ethan-brockmann
+linkedin: ethan-brockmann
 date: "`r format(Sys.time(), '%B %Y')`"
 output: vitae::awesomecv
 ---

@@ -33,7 +33,7 @@ footnotereturnlinkcontents = "↩"
     
 [[menu.main]]
     name = "Apps (Not Secure)"
-    url = "http://10.0.0.149"
+    url = "/apps/"
 
 [params]
     description = "Ethan Brockmann's personal website"
