@@ -32,8 +32,8 @@ footnotereturnlinkcontents = "↩"
     url = "/resume.pdf"
     
 [[menu.main]]
-    name = "Apps (Not Secure)"
-    url = "/apps/"
+    name = "Apps"
+    url = "http://10.0.0.149:80"
 
 [params]
     description = "Ethan Brockmann's personal website"
