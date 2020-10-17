@@ -33,7 +33,7 @@ footnotereturnlinkcontents = "↩"
     
 [[menu.main]]
     name = "Apps"
-    url = "http://10.0.0.149:80"
+    url = "http://apps.ethanbrockmann.com"
 
 [params]
     description = "Ethan Brockmann's personal website"
