@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>opinion on yarb | yet another rstats blog</title>
+    <link>/categories/opinion/</link>
+    <description>Recent content in opinion on yarb | yet another rstats blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 01 May 2020 00:00:00 +0000</lastBuildDate><atom:link href="/categories/opinion/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Why &#34;Make it in Excel&#34; Isn&#39;t All Bad</title>
+      <link>/post/ggplot-excel/</link>
+      <pubDate>Fri, 01 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/ggplot-excel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>X3 Advice</title>
+      <link>/post/advice/</link>
+      <pubDate>Fri, 01 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/advice/</guid>
+      <description>Personal repository for interesting advice I’ve heard following the If you do X 3 times, then do Y pattern.
+If you copy and paste code 3+ times, write a function
+If you copy and paste a function 3+ times, write a package
+— Hadley WickhamIf you give in-person advice 3+ times, write a blog post
+— David Robinson</description>
+    </item>
+    
+  </channel>
+</rss>

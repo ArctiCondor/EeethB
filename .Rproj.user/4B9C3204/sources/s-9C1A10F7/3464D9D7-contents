@@ -1,0 +1,24 @@
+---
+title: X3 Advice
+author: ''
+date: '2020-05-01'
+slug: advice
+categories:
+  - R
+  - opinion
+tags: []
+image: images/post/kernave-1.jpg
+---
+
+Personal repository for interesting advice I've heard following the *If you do X 3 times, then do Y* pattern.
+
+> If you copy and paste code 3+ times, write a function
+> 
+> If you copy and paste a function 3+ times, write a package
+>
+> `r tufte::quote_footer("--- Hadley Wickham")`
+
+> If you give in-persone advice 3+ times, write a blog post
+>
+> `r tufte::quote_footer("--- [David Robinson](https://twitter.com/drob/status/928447584712253440)")` 
+
