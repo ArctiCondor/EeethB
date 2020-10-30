@@ -1,13 +1,15 @@
 ######################## default configuration ####################
-baseURL = "https://ethanbrockmann.com"
+baseURL = "https://stupefied-lamarr-5418b7.netlify.app"
 title = "yarb | yet another rstats blog"
 theme = "persian-hugo"
 languageName = "En"
 languageCode = "en-us"
 # post pagination
-paginate = "5"
+paginate = "3"
 # disqus short name
 disqusShortname = "" # get your shortname form here : https://disqus.com
+# ignore files
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
 ############################# output ##############################
 [outputs]
