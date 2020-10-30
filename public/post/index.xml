@@ -1,61 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Posts on yarb | yet another rstats blog</title>
-    <link>/post/</link>
-    <description>Recent content in Posts on yarb | yet another rstats blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 01 May 2020 00:00:00 +0000</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>The 3 Doors Problem</title>
-      <link>/post/3-doors/</link>
-      <pubDate>Fri, 01 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/3-doors/</guid>
-      <description>Draft post for simulating the 3 doors problem</description>
-    </item>
-    
-    <item>
-      <title>Why &#34;Make it in Excel&#34; Isn&#39;t All Bad</title>
-      <link>/post/ggplot-excel/</link>
-      <pubDate>Fri, 01 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/ggplot-excel/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>X3 Advice</title>
-      <link>/post/advice/</link>
-      <pubDate>Fri, 01 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/advice/</guid>
-      <description>Personal repository for interesting advice I’ve heard following the If you do X 3 times, then do Y pattern.
-If you copy and paste code 3+ times, write a function
-If you copy and paste a function 3+ times, write a package
-— Hadley WickhamIf you give in-person advice 3+ times, write a blog post
-— David Robinson</description>
-    </item>
-    
-    <item>
-      <title>On the Intolerance of R</title>
-      <link>/post/r-intolerance/</link>
-      <pubDate>Mon, 27 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/r-intolerance/</guid>
-      <description>The R community is so welcoming!
-This is a sentiment I encounter almost every day in talks, on Twitter, and on personal blogs. And it’s a sentiment I agree with and feel. But I think in some ways it’s incomplete. Because at times the R community is not so welcoming. I also see people ranting, mostly on Twitter, about the horrible design or structural decisions people have made in their projects.</description>
-    </item>
-    
-    <item>
-      <title>Parsing XML with {tidyr}</title>
-      <link>/post/xml-ratee/</link>
-      <pubDate>Thu, 23 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/xml-ratee/</guid>
-      <description>When I first discovered xml2, I was thrilled. A product from RStudio that works with XML! So great! I had some large XML documents I had to parse at work, and my best solution (before we got RStudio) was to drag them one at a time into Microsoft Excel and let its parser convert each into one big, ugly table. Then I was left to either create some elaborate formulas to extract the relevant info, or pass the table on to SAS and try to wrangle it there.</description>
-    </item>
-    
-  </channel>
-</rss>
