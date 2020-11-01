@@ -50,15 +50,15 @@ link = "plugins/search/search.js"
   URL = "about"
   weight = 2
 
-[[menu.main]]
-  name = "Category"
-  URL = "/categories/"
-  weight = 3
-
-[[menu.main]]
-  name = "Tags"
-  url = "/tags/"
-  weight = 4
+#[[menu.main]]
+#  name = "Category"
+#  URL = "/categories/"
+#  weight = 3
+#
+#[[menu.main]]
+#  name = "Tags"
+#  url = "/tags/"
+#  weight = 4
 
 [[menu.main]]
   name = "Apps"
@@ -85,7 +85,7 @@ link = "plugins/search/search.js"
 [params]
 logo = "images/logo.png"
 # Meta data
-description = "This is meta description"
+description = "Personal website for Ethan Brockmann"
 author = "Themefisher"
 # search  
 search = true
