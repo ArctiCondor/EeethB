@@ -11,3 +11,5 @@ I am an actuarial analyst at BlueCross BlueShield of Mississippi, where I build 
 # This Website
 
 This site was built with [`blogdown`](https://github.com/rstudio/blogdown), is powered by [Hugo](https://gohugo.io), and is hosted on [Netlify](https://www.netlify.com/). It currently uses the [Hugo xmin](https://github.com/yihui/hugo-xmin) theme adapted for `blogdown` by Yihui Xie.
+
+Blog post photos are from [Smoky Quartz Photography](https://smokyquartzphoto.com). They have beautiful photos of people and places in the Pacific Northwest. Go check them out!
