@@ -7,6 +7,7 @@ categories:
   - R
   - opinion
 tags: []
+image: images/post/kernave-1.jpg
 ---
 
 Personal repository for interesting advice I've heard following the *If you do X 3 times, then do Y* pattern.
@@ -17,7 +18,7 @@ Personal repository for interesting advice I've heard following the *If you do X
 >
 > `r tufte::quote_footer("--- Hadley Wickham")`
 
-> If you give in-persone advice 3+ times, write a blog post
+> If you give in-person advice 3+ times, write a blog post
 >
 > `r tufte::quote_footer("--- [David Robinson](https://twitter.com/drob/status/928447584712253440)")` 
 

@@ -8,6 +8,7 @@ categories:
   - R
 tags:
   - simulation
+image: images/post/portland-maybe.jpg
 ---
 
 Draft post for simulating the 3 doors problem

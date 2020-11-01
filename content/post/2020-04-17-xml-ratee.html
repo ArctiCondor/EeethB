@@ -1,5 +1,5 @@
 ---
-title: Parsing XML with ~~`xml2`~~ `tidyr`
+title: Parsing XML with {tidyr}
 author: Ethan Brockmann
 date: "2020-04-23"
 slug: xml-ratee
@@ -8,6 +8,7 @@ categories:
 tags:
   - xml
   - xml2
+image: images/post/mt-hood-flower.jpg
 ---
 
 
@@ -31,7 +32,7 @@ download.file(
 )
 
 cat(stringr::str_replace_all(readr::read_file(ratee), &quot;&gt;&quot;, &quot;&gt;\n&quot;))</code></pre>
-<pre style="max-height: 200px;"><code>## &lt;?xml version=&quot;1.0&quot; ?&gt;
+<pre style="max-height: 250px;"><code>## &lt;?xml version=&quot;1.0&quot; ?&gt;
 ## &lt;raTransferReport xmlns=&quot;http://vo.edge.fm.cms.hhs.gov&quot;&gt;
 ## &lt;includedFileHeader&gt;
 ## &lt;outboundFileIdentifier&gt;
@@ -478,672 +479,607 @@ cat(stringr::str_replace_all(readr::read_file(ratee), &quot;&gt;&quot;, &quot;&g
   as_tibble() %&gt;%
   unnest_wider(raTransferReport)
 
-tbl_ratee %&gt;% 
-  gt()</code></pre>
-<style>html {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
-}
+ratee_str &lt;- capture.output(str(tbl_ratee))
 
-#uqvefgzhxr .gt_table {
-  display: table;
-  border-collapse: collapse;
-  margin-left: auto;
-  margin-right: auto;
-  color: #333333;
-  font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
-  background-color: #FFFFFF;
-  width: auto;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #A8A8A8;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #A8A8A8;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-}
-
-#uqvefgzhxr .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#uqvefgzhxr .gt_title {
-  color: #333333;
-  font-size: 125%;
-  font-weight: initial;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  border-bottom-color: #FFFFFF;
-  border-bottom-width: 0;
-}
-
-#uqvefgzhxr .gt_subtitle {
-  color: #333333;
-  font-size: 85%;
-  font-weight: initial;
-  padding-top: 0;
-  padding-bottom: 4px;
-  border-top-color: #FFFFFF;
-  border-top-width: 0;
-}
-
-#uqvefgzhxr .gt_bottom_border {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#uqvefgzhxr .gt_col_headings {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#uqvefgzhxr .gt_col_heading {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  overflow-x: hidden;
-}
-
-#uqvefgzhxr .gt_column_spanner_outer {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-#uqvefgzhxr .gt_column_spanner_outer:first-child {
-  padding-left: 0;
-}
-
-#uqvefgzhxr .gt_column_spanner_outer:last-child {
-  padding-right: 0;
-}
-
-#uqvefgzhxr .gt_column_spanner {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 6px;
-  overflow-x: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
-#uqvefgzhxr .gt_group_heading {
-  padding: 8px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-}
-
-#uqvefgzhxr .gt_empty_group_heading {
-  padding: 0.5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: middle;
-}
-
-#uqvefgzhxr .gt_from_md > :first-child {
-  margin-top: 0;
-}
-
-#uqvefgzhxr .gt_from_md > :last-child {
-  margin-bottom: 0;
-}
-
-#uqvefgzhxr .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 10px;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  overflow-x: hidden;
-}
-
-#uqvefgzhxr .gt_stub {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 12px;
-}
-
-#uqvefgzhxr .gt_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#uqvefgzhxr .gt_first_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-}
-
-#uqvefgzhxr .gt_grand_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#uqvefgzhxr .gt_first_grand_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-style: double;
-  border-top-width: 6px;
-  border-top-color: #D3D3D3;
-}
-
-#uqvefgzhxr .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
-}
-
-#uqvefgzhxr .gt_table_body {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#uqvefgzhxr .gt_footnotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#uqvefgzhxr .gt_footnote {
-  margin: 0px;
-  font-size: 90%;
-  padding: 4px;
-}
-
-#uqvefgzhxr .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#uqvefgzhxr .gt_sourcenote {
-  font-size: 90%;
-  padding: 4px;
-}
-
-#uqvefgzhxr .gt_left {
-  text-align: left;
-}
-
-#uqvefgzhxr .gt_center {
-  text-align: center;
-}
-
-#uqvefgzhxr .gt_right {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-#uqvefgzhxr .gt_font_normal {
-  font-weight: normal;
-}
-
-#uqvefgzhxr .gt_font_bold {
-  font-weight: bold;
-}
-
-#uqvefgzhxr .gt_font_italic {
-  font-style: italic;
-}
-
-#uqvefgzhxr .gt_super {
-  font-size: 65%;
-}
-
-#uqvefgzhxr .gt_footnote_marks {
-  font-style: italic;
-  font-size: 65%;
-}
-</style>
-<div id="uqvefgzhxr" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
-  
-  <thead class="gt_col_headings">
-    <tr>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">outboundFileIdentifier</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">cmsBatchIdentifier</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">cmsJobIdentifier</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">outboundFileGenerationDateTime</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">interfaceControlReleaseNumber</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">edgeServerVersion</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">edgeServerProcessIdentifier</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">outboundFileTypeCode</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">edgeServerIdentifier</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">issuerIdentifier</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">...1</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">planIdentifier</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">planMarketType</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">exchange</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">plansMetalLevel</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">includedRatingAreaCategory...5</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">includedRatingAreaCategory...6</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">includedRatingAreaCategory...7</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">includedRatingAreaCategory</th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr>
-      <td class="gt_row gt_center">2460f9ad-23bb-4b21-bfb2-378bd060ea81</td>
-      <td class="gt_row gt_center">CMSBATCHID01</td>
-      <td class="gt_row gt_center">CMSJOB01</td>
-      <td class="gt_row gt_center">2019-07-26T10:42:04</td>
-      <td class="gt_row gt_center">05.00.24</td>
-      <td class="gt_row gt_center">EdgeServer_1.00.00_b000157</td>
-      <td class="gt_row gt_center">12</td>
-      <td class="gt_row gt_center">RATEE</td>
-      <td class="gt_row gt_center">104231</td>
-      <td class="gt_row gt_center">31492</td>
-      <td class="gt_row gt_left">NA</td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_left">VT</td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_left">2019</td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_left">P</td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_left">NA</td>
-      <td class="gt_row gt_center">22033VA0019999</td>
-      <td class="gt_row gt_center">1</td>
-      <td class="gt_row gt_center">On the Exchange</td>
-      <td class="gt_row gt_center">Gold</td>
-      <td class="gt_row gt_center">list("001"), list("702.799999999999967"), list("702.799999999999967"), list("678.466666666666635"), list("2.298248339973440"), list("1.296077262379055"), list("942.988996395370895"), list("727.571591422287636")</td>
-      <td class="gt_row gt_center">list("002"), list("12.166666666666667"), list("12.166666666666667"), list("12.166666666666667"), list("0.334000000000000"), list("1.302000000000000"), list("59.671232876712325"), list("45.830439997474904")</td>
-      <td class="gt_row gt_center">list("006"), list("209.866666666666657"), list("209.866666666666657"), list("209.866666666666657"), list("0.381610864040661"), list("1.302000000000000"), list("1000.000000000000000"), list("768.049155145929339")</td>
-      <td class="gt_row gt_center"></td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_left">NA</td>
-      <td class="gt_row gt_center">22033VA0041234</td>
-      <td class="gt_row gt_center">2</td>
-      <td class="gt_row gt_center">On the Exchange</td>
-      <td class="gt_row gt_center">Gold</td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center">list("001"), list("36.499999999999998"), list("36.499999999999998"), list("36.499999999999998"), list("4.698370000000000"), list("1.302000000000000"), list("1000.000000000000000"), list("768.049155145929339")</td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_left">NA</td>
-      <td class="gt_row gt_center">22033VA0049999</td>
-      <td class="gt_row gt_center">2</td>
-      <td class="gt_row gt_center">On the Exchange</td>
-      <td class="gt_row gt_center">Gold</td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center">list("001"), list("97.333333333333328"), list("97.333333333333328"), list("97.333333333333328"), list("4.698370000000000"), list("1.302000000000000"), list("937.500000000000000"), list("720.046082949308756")</td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_left">NA</td>
-      <td class="gt_row gt_center">22033VA0130001</td>
-      <td class="gt_row gt_center">1</td>
-      <td class="gt_row gt_center">On the Exchange</td>
-      <td class="gt_row gt_center">Platinum</td>
-      <td class="gt_row gt_center">list("001"), list("6.033333333333333"), list("6.033333333333333"), list("6.033333333333333"), list("0.334000000000000"), list("1.302000000000000"), list("1000.000000000000000"), list("768.049155145929339")</td>
-      <td class="gt_row gt_center">list("006"), list("12.166666666666666"), list("12.166666666666666"), list("12.166666666666666"), list("0.334000000000000"), list("1.302000000000000"), list("1000.000000000000000"), list("768.049155145929339")</td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_left">NA</td>
-      <td class="gt_row gt_center">22033VA0130014</td>
-      <td class="gt_row gt_center">1</td>
-      <td class="gt_row gt_center">On the Exchange</td>
-      <td class="gt_row gt_center">Silver</td>
-      <td class="gt_row gt_center">list("001"), list("79.166666666666663"), list("79.166666666666663"), list("79.166666666666663"), list("4.329155789473684"), list("1.298311578947368"), list("945.768421052631571"), list("728.460283639642324")</td>
-      <td class="gt_row gt_center">list("002"), list("11.133333333333333"), list("11.133333333333333"), list("11.133333333333333"), list("0.273000000000000"), list("1.302000000000000"), list("1000.000000000000000"), list("768.049155145929339")</td>
-      <td class="gt_row gt_center">list("006"), list("18.166666666666666"), list("18.166666666666666"), list("18.166666666666666"), list("1.242470458715596"), list("1.302000000000000"), list("1000.000000000000000"), list("768.049155145929339")</td>
-      <td class="gt_row gt_center"></td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_left">NA</td>
-      <td class="gt_row gt_center">22033VA0180001</td>
-      <td class="gt_row gt_center">1</td>
-      <td class="gt_row gt_center"> On the Exchange</td>
-      <td class="gt_row gt_center">Platinum</td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center">list("001"), list("36.499999999999998"), list("36.499999999999998"), list("36.499999999999998"), list("4.603000000000000"), list("1.302000000000000"), list("1000.000000000000000"), list("768.049155145929339")</td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_left">NA</td>
-      <td class="gt_row gt_center">22033VA3332222</td>
-      <td class="gt_row gt_center">1</td>
-      <td class="gt_row gt_center">On the Exchange</td>
-      <td class="gt_row gt_center">Platinum</td>
-      <td class="gt_row gt_center">list("001"), list("97.333333333333328"), list("97.333333333333328"), list("97.333333333333328"), list("3.197750000000000"), list("1.299000000000000"), list("1000.000000000000000"), list("769.822940723633564")</td>
-      <td class="gt_row gt_center">list("002"), list("60.833333333333332"), list("60.833333333333332"), list("60.833333333333332"), list("3.834400000000000"), list("1.302000000000000"), list("178.726027397260269"), list("137.270374345053970")</td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_left">NA</td>
-      <td class="gt_row gt_center">22033VA4442222</td>
-      <td class="gt_row gt_center">2</td>
-      <td class="gt_row gt_center">On the Exchange</td>
-      <td class="gt_row gt_center">Platinum</td>
-      <td class="gt_row gt_center">list("001"), list("36.499999999999998"), list("36.499999999999998"), list("36.499999999999998"), list("4.603000000000000"), list("1.294000000000000"), list("1000.000000000000000"), list("772.797527047913447")</td>
-      <td class="gt_row gt_center">list("002"), list("60.833333333333332"), list("60.833333333333332"), list("60.833333333333332"), list("3.834400000000000"), list("1.302000000000000"), list("50.802739726027397"), list("39.019001325673884")</td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_left">NA</td>
-      <td class="gt_row gt_center">22033VT0000101</td>
-      <td class="gt_row gt_center">1</td>
-      <td class="gt_row gt_center">On the Exchange</td>
-      <td class="gt_row gt_center">Silver</td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center">list("001"), list("12.166666666666666"), list("12.166666666666666"), list("12.166666666666666"), list("4.227000000000000"), list("1.000000000000000"), list("1000.000000000000000"), list("1000.000000000000000")</td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_left">NA</td>
-      <td class="gt_row gt_center">22033VT0000201</td>
-      <td class="gt_row gt_center">2</td>
-      <td class="gt_row gt_center">On the Exchange</td>
-      <td class="gt_row gt_center">Silver</td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center"></td>
-      <td class="gt_row gt_center">list("001"), list("12.166666666666666"), list("12.166666666666666"), list("12.166666666666666"), list("4.227000000000000"), list("1.000000000000000"), list("750.000000000000000"), list("750.000000000000000")</td>
-    </tr>
-  </tbody>
-  
-  
-</table></div>
+cat(ratee_str, sep = &quot;\n&quot;)</code></pre>
+<pre style="max-height: 250px;"><code>## tibble [14 x 19] (S3: tbl_df/tbl/data.frame)
+##  $ outboundFileIdentifier        :List of 14
+##   ..$ :List of 1
+##   .. ..$ : chr &quot;2460f9ad-23bb-4b21-bfb2-378bd060ea81&quot;
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##  $ cmsBatchIdentifier            :List of 14
+##   ..$ :List of 1
+##   .. ..$ : chr &quot;CMSBATCHID01&quot;
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##  $ cmsJobIdentifier              :List of 14
+##   ..$ :List of 1
+##   .. ..$ : chr &quot;CMSJOB01&quot;
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##  $ outboundFileGenerationDateTime:List of 14
+##   ..$ :List of 1
+##   .. ..$ : chr &quot;2019-07-26T10:42:04&quot;
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##  $ interfaceControlReleaseNumber :List of 14
+##   ..$ :List of 1
+##   .. ..$ : chr &quot;05.00.24&quot;
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##  $ edgeServerVersion             :List of 14
+##   ..$ :List of 1
+##   .. ..$ : chr &quot;EdgeServer_1.00.00_b000157&quot;
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##  $ edgeServerProcessIdentifier   :List of 14
+##   ..$ :List of 1
+##   .. ..$ : chr &quot;12&quot;
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##  $ outboundFileTypeCode          :List of 14
+##   ..$ :List of 1
+##   .. ..$ : chr &quot;RATEE&quot;
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##  $ edgeServerIdentifier          :List of 14
+##   ..$ :List of 1
+##   .. ..$ : chr &quot;104231&quot;
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##  $ issuerIdentifier              :List of 14
+##   ..$ :List of 1
+##   .. ..$ : chr &quot;31492&quot;
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##  $ ...1                          : chr [1:14] NA &quot;VT&quot; &quot;2019&quot; &quot;P&quot; ...
+##  $ planIdentifier                :List of 14
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ :List of 1
+##   .. ..$ : chr &quot;22033VA0019999&quot;
+##   ..$ :List of 1
+##   .. ..$ : chr &quot;22033VA0041234&quot;
+##   ..$ :List of 1
+##   .. ..$ : chr &quot;22033VA0049999&quot;
+##   ..$ :List of 1
+##   .. ..$ : chr &quot;22033VA0130001&quot;
+##   ..$ :List of 1
+##   .. ..$ : chr &quot;22033VA0130014&quot;
+##   ..$ :List of 1
+##   .. ..$ : chr &quot;22033VA0180001&quot;
+##   ..$ :List of 1
+##   .. ..$ : chr &quot;22033VA3332222&quot;
+##   ..$ :List of 1
+##   .. ..$ : chr &quot;22033VA4442222&quot;
+##   ..$ :List of 1
+##   .. ..$ : chr &quot;22033VT0000101&quot;
+##   ..$ :List of 1
+##   .. ..$ : chr &quot;22033VT0000201&quot;
+##  $ planMarketType                :List of 14
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ :List of 1
+##   .. ..$ : chr &quot;1&quot;
+##   ..$ :List of 1
+##   .. ..$ : chr &quot;2&quot;
+##   ..$ :List of 1
+##   .. ..$ : chr &quot;2&quot;
+##   ..$ :List of 1
+##   .. ..$ : chr &quot;1&quot;
+##   ..$ :List of 1
+##   .. ..$ : chr &quot;1&quot;
+##   ..$ :List of 1
+##   .. ..$ : chr &quot;1&quot;
+##   ..$ :List of 1
+##   .. ..$ : chr &quot;1&quot;
+##   ..$ :List of 1
+##   .. ..$ : chr &quot;2&quot;
+##   ..$ :List of 1
+##   .. ..$ : chr &quot;1&quot;
+##   ..$ :List of 1
+##   .. ..$ : chr &quot;2&quot;
+##  $ exchange                      :List of 14
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ :List of 1
+##   .. ..$ : chr &quot;On the Exchange&quot;
+##   ..$ :List of 1
+##   .. ..$ : chr &quot;On the Exchange&quot;
+##   ..$ :List of 1
+##   .. ..$ : chr &quot;On the Exchange&quot;
+##   ..$ :List of 1
+##   .. ..$ : chr &quot;On the Exchange&quot;
+##   ..$ :List of 1
+##   .. ..$ : chr &quot;On the Exchange&quot;
+##   ..$ :List of 1
+##   .. ..$ : chr &quot; On the Exchange &quot;
+##   ..$ :List of 1
+##   .. ..$ : chr &quot;On the Exchange&quot;
+##   ..$ :List of 1
+##   .. ..$ : chr &quot;On the Exchange&quot;
+##   ..$ :List of 1
+##   .. ..$ : chr &quot;On the Exchange&quot;
+##   ..$ :List of 1
+##   .. ..$ : chr &quot;On the Exchange&quot;
+##  $ plansMetalLevel               :List of 14
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ :List of 1
+##   .. ..$ : chr &quot;Gold&quot;
+##   ..$ :List of 1
+##   .. ..$ : chr &quot;Gold&quot;
+##   ..$ :List of 1
+##   .. ..$ : chr &quot;Gold&quot;
+##   ..$ :List of 1
+##   .. ..$ : chr &quot;Platinum&quot;
+##   ..$ :List of 1
+##   .. ..$ : chr &quot;Silver&quot;
+##   ..$ :List of 1
+##   .. ..$ : chr &quot;Platinum&quot;
+##   ..$ :List of 1
+##   .. ..$ : chr &quot;Platinum&quot;
+##   ..$ :List of 1
+##   .. ..$ : chr &quot;Platinum&quot;
+##   ..$ :List of 1
+##   .. ..$ : chr &quot;Silver&quot;
+##   ..$ :List of 1
+##   .. ..$ : chr &quot;Silver&quot;
+##  $ includedRatingAreaCategory...5:List of 14
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ :List of 8
+##   .. ..$ ratingArea               :List of 1
+##   .. .. ..$ : chr &quot;001&quot;
+##   .. ..$ enrolleeMemberMonths     :List of 1
+##   .. .. ..$ : chr &quot;702.799999999999967&quot;
+##   .. ..$ enrolleeBillableMonths   :List of 1
+##   .. .. ..$ : chr &quot;702.799999999999967&quot;
+##   .. ..$ enrolleeSubscriberMonths :List of 1
+##   .. .. ..$ : chr &quot;678.466666666666635&quot;
+##   .. ..$ planLiabilityRiskScore   :List of 1
+##   .. .. ..$ : chr &quot;2.298248339973440&quot;
+##   .. ..$ planAllowableRatingFactor:List of 1
+##   .. .. ..$ : chr &quot;1.296077262379055&quot;
+##   .. ..$ planAveragePi            :List of 1
+##   .. .. ..$ : chr &quot;942.988996395370895&quot;
+##   .. ..$ planAgeAvePremium        :List of 1
+##   .. .. ..$ : chr &quot;727.571591422287636&quot;
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ :List of 8
+##   .. ..$ ratingArea               :List of 1
+##   .. .. ..$ : chr &quot;001&quot;
+##   .. ..$ enrolleeMemberMonths     :List of 1
+##   .. .. ..$ : chr &quot;6.033333333333333&quot;
+##   .. ..$ enrolleeBillableMonths   :List of 1
+##   .. .. ..$ : chr &quot;6.033333333333333&quot;
+##   .. ..$ enrolleeSubscriberMonths :List of 1
+##   .. .. ..$ : chr &quot;6.033333333333333&quot;
+##   .. ..$ planLiabilityRiskScore   :List of 1
+##   .. .. ..$ : chr &quot;0.334000000000000&quot;
+##   .. ..$ planAllowableRatingFactor:List of 1
+##   .. .. ..$ : chr &quot;1.302000000000000&quot;
+##   .. ..$ planAveragePi            :List of 1
+##   .. .. ..$ : chr &quot;1000.000000000000000&quot;
+##   .. ..$ planAgeAvePremium        :List of 1
+##   .. .. ..$ : chr &quot;768.049155145929339&quot;
+##   ..$ :List of 8
+##   .. ..$ ratingArea               :List of 1
+##   .. .. ..$ : chr &quot;001&quot;
+##   .. ..$ enrolleeMemberMonths     :List of 1
+##   .. .. ..$ : chr &quot;79.166666666666663&quot;
+##   .. ..$ enrolleeBillableMonths   :List of 1
+##   .. .. ..$ : chr &quot;79.166666666666663&quot;
+##   .. ..$ enrolleeSubscriberMonths :List of 1
+##   .. .. ..$ : chr &quot;79.166666666666663&quot;
+##   .. ..$ planLiabilityRiskScore   :List of 1
+##   .. .. ..$ : chr &quot;4.329155789473684&quot;
+##   .. ..$ planAllowableRatingFactor:List of 1
+##   .. .. ..$ : chr &quot;1.298311578947368&quot;
+##   .. ..$ planAveragePi            :List of 1
+##   .. .. ..$ : chr &quot;945.768421052631571&quot;
+##   .. ..$ planAgeAvePremium        :List of 1
+##   .. .. ..$ : chr &quot;728.460283639642324&quot;
+##   ..$ : NULL
+##   ..$ :List of 8
+##   .. ..$ ratingArea               :List of 1
+##   .. .. ..$ : chr &quot;001&quot;
+##   .. ..$ enrolleeMemberMonths     :List of 1
+##   .. .. ..$ : chr &quot;97.333333333333328&quot;
+##   .. ..$ enrolleeBillableMonths   :List of 1
+##   .. .. ..$ : chr &quot;97.333333333333328&quot;
+##   .. ..$ enrolleeSubscriberMonths :List of 1
+##   .. .. ..$ : chr &quot;97.333333333333328&quot;
+##   .. ..$ planLiabilityRiskScore   :List of 1
+##   .. .. ..$ : chr &quot;3.197750000000000&quot;
+##   .. ..$ planAllowableRatingFactor:List of 1
+##   .. .. ..$ : chr &quot;1.299000000000000&quot;
+##   .. ..$ planAveragePi            :List of 1
+##   .. .. ..$ : chr &quot;1000.000000000000000&quot;
+##   .. ..$ planAgeAvePremium        :List of 1
+##   .. .. ..$ : chr &quot;769.822940723633564&quot;
+##   ..$ :List of 8
+##   .. ..$ ratingArea               :List of 1
+##   .. .. ..$ : chr &quot;001&quot;
+##   .. ..$ enrolleeMemberMonths     :List of 1
+##   .. .. ..$ : chr &quot;36.499999999999998&quot;
+##   .. ..$ enrolleeBillableMonths   :List of 1
+##   .. .. ..$ : chr &quot;36.499999999999998&quot;
+##   .. ..$ enrolleeSubscriberMonths :List of 1
+##   .. .. ..$ : chr &quot;36.499999999999998&quot;
+##   .. ..$ planLiabilityRiskScore   :List of 1
+##   .. .. ..$ : chr &quot;4.603000000000000&quot;
+##   .. ..$ planAllowableRatingFactor:List of 1
+##   .. .. ..$ : chr &quot;1.294000000000000&quot;
+##   .. ..$ planAveragePi            :List of 1
+##   .. .. ..$ : chr &quot;1000.000000000000000&quot;
+##   .. ..$ planAgeAvePremium        :List of 1
+##   .. .. ..$ : chr &quot;772.797527047913447&quot;
+##   ..$ : NULL
+##   ..$ : NULL
+##  $ includedRatingAreaCategory...6:List of 14
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ :List of 8
+##   .. ..$ ratingArea               :List of 1
+##   .. .. ..$ : chr &quot;002&quot;
+##   .. ..$ enrolleeMemberMonths     :List of 1
+##   .. .. ..$ : chr &quot;12.166666666666667&quot;
+##   .. ..$ enrolleeBillableMonths   :List of 1
+##   .. .. ..$ : chr &quot;12.166666666666667&quot;
+##   .. ..$ enrolleeSubscriberMonths :List of 1
+##   .. .. ..$ : chr &quot;12.166666666666667&quot;
+##   .. ..$ planLiabilityRiskScore   :List of 1
+##   .. .. ..$ : chr &quot;0.334000000000000&quot;
+##   .. ..$ planAllowableRatingFactor:List of 1
+##   .. .. ..$ : chr &quot;1.302000000000000&quot;
+##   .. ..$ planAveragePi            :List of 1
+##   .. .. ..$ : chr &quot;59.671232876712325&quot;
+##   .. ..$ planAgeAvePremium        :List of 1
+##   .. .. ..$ : chr &quot;45.830439997474904&quot;
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ :List of 8
+##   .. ..$ ratingArea               :List of 1
+##   .. .. ..$ : chr &quot;006&quot;
+##   .. ..$ enrolleeMemberMonths     :List of 1
+##   .. .. ..$ : chr &quot;12.166666666666666&quot;
+##   .. ..$ enrolleeBillableMonths   :List of 1
+##   .. .. ..$ : chr &quot;12.166666666666666&quot;
+##   .. ..$ enrolleeSubscriberMonths :List of 1
+##   .. .. ..$ : chr &quot;12.166666666666666&quot;
+##   .. ..$ planLiabilityRiskScore   :List of 1
+##   .. .. ..$ : chr &quot;0.334000000000000&quot;
+##   .. ..$ planAllowableRatingFactor:List of 1
+##   .. .. ..$ : chr &quot;1.302000000000000&quot;
+##   .. ..$ planAveragePi            :List of 1
+##   .. .. ..$ : chr &quot;1000.000000000000000&quot;
+##   .. ..$ planAgeAvePremium        :List of 1
+##   .. .. ..$ : chr &quot;768.049155145929339&quot;
+##   ..$ :List of 8
+##   .. ..$ ratingArea               :List of 1
+##   .. .. ..$ : chr &quot;002&quot;
+##   .. ..$ enrolleeMemberMonths     :List of 1
+##   .. .. ..$ : chr &quot;11.133333333333333&quot;
+##   .. ..$ enrolleeBillableMonths   :List of 1
+##   .. .. ..$ : chr &quot;11.133333333333333&quot;
+##   .. ..$ enrolleeSubscriberMonths :List of 1
+##   .. .. ..$ : chr &quot;11.133333333333333&quot;
+##   .. ..$ planLiabilityRiskScore   :List of 1
+##   .. .. ..$ : chr &quot;0.273000000000000&quot;
+##   .. ..$ planAllowableRatingFactor:List of 1
+##   .. .. ..$ : chr &quot;1.302000000000000&quot;
+##   .. ..$ planAveragePi            :List of 1
+##   .. .. ..$ : chr &quot;1000.000000000000000&quot;
+##   .. ..$ planAgeAvePremium        :List of 1
+##   .. .. ..$ : chr &quot;768.049155145929339&quot;
+##   ..$ : NULL
+##   ..$ :List of 8
+##   .. ..$ ratingArea               :List of 1
+##   .. .. ..$ : chr &quot;002&quot;
+##   .. ..$ enrolleeMemberMonths     :List of 1
+##   .. .. ..$ : chr &quot;60.833333333333332&quot;
+##   .. ..$ enrolleeBillableMonths   :List of 1
+##   .. .. ..$ : chr &quot;60.833333333333332&quot;
+##   .. ..$ enrolleeSubscriberMonths :List of 1
+##   .. .. ..$ : chr &quot;60.833333333333332&quot;
+##   .. ..$ planLiabilityRiskScore   :List of 1
+##   .. .. ..$ : chr &quot;3.834400000000000&quot;
+##   .. ..$ planAllowableRatingFactor:List of 1
+##   .. .. ..$ : chr &quot;1.302000000000000&quot;
+##   .. ..$ planAveragePi            :List of 1
+##   .. .. ..$ : chr &quot;178.726027397260269&quot;
+##   .. ..$ planAgeAvePremium        :List of 1
+##   .. .. ..$ : chr &quot;137.270374345053970&quot;
+##   ..$ :List of 8
+##   .. ..$ ratingArea               :List of 1
+##   .. .. ..$ : chr &quot;002&quot;
+##   .. ..$ enrolleeMemberMonths     :List of 1
+##   .. .. ..$ : chr &quot;60.833333333333332&quot;
+##   .. ..$ enrolleeBillableMonths   :List of 1
+##   .. .. ..$ : chr &quot;60.833333333333332&quot;
+##   .. ..$ enrolleeSubscriberMonths :List of 1
+##   .. .. ..$ : chr &quot;60.833333333333332&quot;
+##   .. ..$ planLiabilityRiskScore   :List of 1
+##   .. .. ..$ : chr &quot;3.834400000000000&quot;
+##   .. ..$ planAllowableRatingFactor:List of 1
+##   .. .. ..$ : chr &quot;1.302000000000000&quot;
+##   .. ..$ planAveragePi            :List of 1
+##   .. .. ..$ : chr &quot;50.802739726027397&quot;
+##   .. ..$ planAgeAvePremium        :List of 1
+##   .. .. ..$ : chr &quot;39.019001325673884&quot;
+##   ..$ : NULL
+##   ..$ : NULL
+##  $ includedRatingAreaCategory...7:List of 14
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ :List of 8
+##   .. ..$ ratingArea               :List of 1
+##   .. .. ..$ : chr &quot;006&quot;
+##   .. ..$ enrolleeMemberMonths     :List of 1
+##   .. .. ..$ : chr &quot;209.866666666666657&quot;
+##   .. ..$ enrolleeBillableMonths   :List of 1
+##   .. .. ..$ : chr &quot;209.866666666666657&quot;
+##   .. ..$ enrolleeSubscriberMonths :List of 1
+##   .. .. ..$ : chr &quot;209.866666666666657&quot;
+##   .. ..$ planLiabilityRiskScore   :List of 1
+##   .. .. ..$ : chr &quot;0.381610864040661&quot;
+##   .. ..$ planAllowableRatingFactor:List of 1
+##   .. .. ..$ : chr &quot;1.302000000000000&quot;
+##   .. ..$ planAveragePi            :List of 1
+##   .. .. ..$ : chr &quot;1000.000000000000000&quot;
+##   .. ..$ planAgeAvePremium        :List of 1
+##   .. .. ..$ : chr &quot;768.049155145929339&quot;
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ :List of 8
+##   .. ..$ ratingArea               :List of 1
+##   .. .. ..$ : chr &quot;006&quot;
+##   .. ..$ enrolleeMemberMonths     :List of 1
+##   .. .. ..$ : chr &quot;18.166666666666666&quot;
+##   .. ..$ enrolleeBillableMonths   :List of 1
+##   .. .. ..$ : chr &quot;18.166666666666666&quot;
+##   .. ..$ enrolleeSubscriberMonths :List of 1
+##   .. .. ..$ : chr &quot;18.166666666666666&quot;
+##   .. ..$ planLiabilityRiskScore   :List of 1
+##   .. .. ..$ : chr &quot;1.242470458715596&quot;
+##   .. ..$ planAllowableRatingFactor:List of 1
+##   .. .. ..$ : chr &quot;1.302000000000000&quot;
+##   .. ..$ planAveragePi            :List of 1
+##   .. .. ..$ : chr &quot;1000.000000000000000&quot;
+##   .. ..$ planAgeAvePremium        :List of 1
+##   .. .. ..$ : chr &quot;768.049155145929339&quot;
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##  $ includedRatingAreaCategory    :List of 14
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ :List of 8
+##   .. ..$ ratingArea               :List of 1
+##   .. .. ..$ : chr &quot;001&quot;
+##   .. ..$ enrolleeMemberMonths     :List of 1
+##   .. .. ..$ : chr &quot;36.499999999999998&quot;
+##   .. ..$ enrolleeBillableMonths   :List of 1
+##   .. .. ..$ : chr &quot;36.499999999999998&quot;
+##   .. ..$ enrolleeSubscriberMonths :List of 1
+##   .. .. ..$ : chr &quot;36.499999999999998&quot;
+##   .. ..$ planLiabilityRiskScore   :List of 1
+##   .. .. ..$ : chr &quot;4.698370000000000&quot;
+##   .. ..$ planAllowableRatingFactor:List of 1
+##   .. .. ..$ : chr &quot;1.302000000000000&quot;
+##   .. ..$ planAveragePi            :List of 1
+##   .. .. ..$ : chr &quot;1000.000000000000000&quot;
+##   .. ..$ planAgeAvePremium        :List of 1
+##   .. .. ..$ : chr &quot;768.049155145929339&quot;
+##   ..$ :List of 8
+##   .. ..$ ratingArea               :List of 1
+##   .. .. ..$ : chr &quot;001&quot;
+##   .. ..$ enrolleeMemberMonths     :List of 1
+##   .. .. ..$ : chr &quot;97.333333333333328&quot;
+##   .. ..$ enrolleeBillableMonths   :List of 1
+##   .. .. ..$ : chr &quot;97.333333333333328&quot;
+##   .. ..$ enrolleeSubscriberMonths :List of 1
+##   .. .. ..$ : chr &quot;97.333333333333328&quot;
+##   .. ..$ planLiabilityRiskScore   :List of 1
+##   .. .. ..$ : chr &quot;4.698370000000000&quot;
+##   .. ..$ planAllowableRatingFactor:List of 1
+##   .. .. ..$ : chr &quot;1.302000000000000&quot;
+##   .. ..$ planAveragePi            :List of 1
+##   .. .. ..$ : chr &quot;937.500000000000000&quot;
+##   .. ..$ planAgeAvePremium        :List of 1
+##   .. .. ..$ : chr &quot;720.046082949308756&quot;
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ :List of 8
+##   .. ..$ ratingArea               :List of 1
+##   .. .. ..$ : chr &quot;001&quot;
+##   .. ..$ enrolleeMemberMonths     :List of 1
+##   .. .. ..$ : chr &quot;36.499999999999998&quot;
+##   .. ..$ enrolleeBillableMonths   :List of 1
+##   .. .. ..$ : chr &quot;36.499999999999998&quot;
+##   .. ..$ enrolleeSubscriberMonths :List of 1
+##   .. .. ..$ : chr &quot;36.499999999999998&quot;
+##   .. ..$ planLiabilityRiskScore   :List of 1
+##   .. .. ..$ : chr &quot;4.603000000000000&quot;
+##   .. ..$ planAllowableRatingFactor:List of 1
+##   .. .. ..$ : chr &quot;1.302000000000000&quot;
+##   .. ..$ planAveragePi            :List of 1
+##   .. .. ..$ : chr &quot;1000.000000000000000&quot;
+##   .. ..$ planAgeAvePremium        :List of 1
+##   .. .. ..$ : chr &quot;768.049155145929339&quot;
+##   ..$ : NULL
+##   ..$ : NULL
+##   ..$ :List of 8
+##   .. ..$ ratingArea               :List of 1
+##   .. .. ..$ : chr &quot;001&quot;
+##   .. ..$ enrolleeMemberMonths     :List of 1
+##   .. .. ..$ : chr &quot;12.166666666666666&quot;
+##   .. ..$ enrolleeBillableMonths   :List of 1
+##   .. .. ..$ : chr &quot;12.166666666666666&quot;
+##   .. ..$ enrolleeSubscriberMonths :List of 1
+##   .. .. ..$ : chr &quot;12.166666666666666&quot;
+##   .. ..$ planLiabilityRiskScore   :List of 1
+##   .. .. ..$ : chr &quot;4.227000000000000&quot;
+##   .. ..$ planAllowableRatingFactor:List of 1
+##   .. .. ..$ : chr &quot;1.000000000000000&quot;
+##   .. ..$ planAveragePi            :List of 1
+##   .. .. ..$ : chr &quot;1000.000000000000000&quot;
+##   .. ..$ planAgeAvePremium        :List of 1
+##   .. .. ..$ : chr &quot;1000.000000000000000&quot;
+##   ..$ :List of 8
+##   .. ..$ ratingArea               :List of 1
+##   .. .. ..$ : chr &quot;001&quot;
+##   .. ..$ enrolleeMemberMonths     :List of 1
+##   .. .. ..$ : chr &quot;12.166666666666666&quot;
+##   .. ..$ enrolleeBillableMonths   :List of 1
+##   .. .. ..$ : chr &quot;12.166666666666666&quot;
+##   .. ..$ enrolleeSubscriberMonths :List of 1
+##   .. .. ..$ : chr &quot;12.166666666666666&quot;
+##   .. ..$ planLiabilityRiskScore   :List of 1
+##   .. .. ..$ : chr &quot;4.227000000000000&quot;
+##   .. ..$ planAllowableRatingFactor:List of 1
+##   .. .. ..$ : chr &quot;1.000000000000000&quot;
+##   .. ..$ planAveragePi            :List of 1
+##   .. .. ..$ : chr &quot;750.000000000000000&quot;
+##   .. ..$ planAgeAvePremium        :List of 1
+##   .. .. ..$ : chr &quot;750.000000000000000&quot;</code></pre>
 <p>So now we have a tibble, but it doesn’t look very tidy. There are all these <code>NA</code>s (which are actually <code>"NA"</code>s?) There are some nested lists and also a column, <code>includedRatingAreaCategory</code>, that apparently repeated 8 times. Let’s clean this up a bit. I know that the first few columns contain header metadata about how the submission to the EDGE server was made, so we’ll split those off into their own table. Then remove all the empty rows, and finally unnest the list columns. <code>gt()</code> actually unlists what it can really nicely, but if you <code>print(tbl_ratee)</code> instead of piping it into a <code>gt()</code> call, you see that all the columns are actually still list columns.</p>
 <pre class="r"><code>tbl_head &lt;- tbl_ratee %&gt;%
   select(outboundFileIdentifier:issuerIdentifier) %&gt;%
-  filter(outboundFileIdentifier != &quot;NA&quot;) %&gt;%
+  filter(outboundFileIdentifier != &quot;NULL&quot;) %&gt;%
   unnest(cols = names(.))
 
 tbl_head %&gt;% 
@@ -1152,7 +1088,7 @@ tbl_head %&gt;%
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#bwfyrwfphw .gt_table {
+#tojwtivuxw .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -1177,7 +1113,7 @@ tbl_head %&gt;%
   border-left-color: #D3D3D3;
 }
 
-#bwfyrwfphw .gt_heading {
+#tojwtivuxw .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1189,7 +1125,7 @@ tbl_head %&gt;%
   border-right-color: #D3D3D3;
 }
 
-#bwfyrwfphw .gt_title {
+#tojwtivuxw .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1199,7 +1135,7 @@ tbl_head %&gt;%
   border-bottom-width: 0;
 }
 
-#bwfyrwfphw .gt_subtitle {
+#tojwtivuxw .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1209,13 +1145,13 @@ tbl_head %&gt;%
   border-top-width: 0;
 }
 
-#bwfyrwfphw .gt_bottom_border {
+#tojwtivuxw .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#bwfyrwfphw .gt_col_headings {
+#tojwtivuxw .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1230,7 +1166,7 @@ tbl_head %&gt;%
   border-right-color: #D3D3D3;
 }
 
-#bwfyrwfphw .gt_col_heading {
+#tojwtivuxw .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1250,7 +1186,7 @@ tbl_head %&gt;%
   overflow-x: hidden;
 }
 
-#bwfyrwfphw .gt_column_spanner_outer {
+#tojwtivuxw .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1262,15 +1198,15 @@ tbl_head %&gt;%
   padding-right: 4px;
 }
 
-#bwfyrwfphw .gt_column_spanner_outer:first-child {
+#tojwtivuxw .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#bwfyrwfphw .gt_column_spanner_outer:last-child {
+#tojwtivuxw .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#bwfyrwfphw .gt_column_spanner {
+#tojwtivuxw .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1282,7 +1218,7 @@ tbl_head %&gt;%
   width: 100%;
 }
 
-#bwfyrwfphw .gt_group_heading {
+#tojwtivuxw .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1304,7 +1240,7 @@ tbl_head %&gt;%
   vertical-align: middle;
 }
 
-#bwfyrwfphw .gt_empty_group_heading {
+#tojwtivuxw .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1319,15 +1255,15 @@ tbl_head %&gt;%
   vertical-align: middle;
 }
 
-#bwfyrwfphw .gt_from_md > :first-child {
+#tojwtivuxw .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#bwfyrwfphw .gt_from_md > :last-child {
+#tojwtivuxw .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#bwfyrwfphw .gt_row {
+#tojwtivuxw .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1346,7 +1282,7 @@ tbl_head %&gt;%
   overflow-x: hidden;
 }
 
-#bwfyrwfphw .gt_stub {
+#tojwtivuxw .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1358,7 +1294,7 @@ tbl_head %&gt;%
   padding-left: 12px;
 }
 
-#bwfyrwfphw .gt_summary_row {
+#tojwtivuxw .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1368,7 +1304,7 @@ tbl_head %&gt;%
   padding-right: 5px;
 }
 
-#bwfyrwfphw .gt_first_summary_row {
+#tojwtivuxw .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1378,7 +1314,7 @@ tbl_head %&gt;%
   border-top-color: #D3D3D3;
 }
 
-#bwfyrwfphw .gt_grand_summary_row {
+#tojwtivuxw .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1388,7 +1324,7 @@ tbl_head %&gt;%
   padding-right: 5px;
 }
 
-#bwfyrwfphw .gt_first_grand_summary_row {
+#tojwtivuxw .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1398,11 +1334,11 @@ tbl_head %&gt;%
   border-top-color: #D3D3D3;
 }
 
-#bwfyrwfphw .gt_striped {
+#tojwtivuxw .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#bwfyrwfphw .gt_table_body {
+#tojwtivuxw .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1411,7 +1347,7 @@ tbl_head %&gt;%
   border-bottom-color: #D3D3D3;
 }
 
-#bwfyrwfphw .gt_footnotes {
+#tojwtivuxw .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1425,13 +1361,13 @@ tbl_head %&gt;%
   border-right-color: #D3D3D3;
 }
 
-#bwfyrwfphw .gt_footnote {
+#tojwtivuxw .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#bwfyrwfphw .gt_sourcenotes {
+#tojwtivuxw .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1445,46 +1381,46 @@ tbl_head %&gt;%
   border-right-color: #D3D3D3;
 }
 
-#bwfyrwfphw .gt_sourcenote {
+#tojwtivuxw .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#bwfyrwfphw .gt_left {
+#tojwtivuxw .gt_left {
   text-align: left;
 }
 
-#bwfyrwfphw .gt_center {
+#tojwtivuxw .gt_center {
   text-align: center;
 }
 
-#bwfyrwfphw .gt_right {
+#tojwtivuxw .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#bwfyrwfphw .gt_font_normal {
+#tojwtivuxw .gt_font_normal {
   font-weight: normal;
 }
 
-#bwfyrwfphw .gt_font_bold {
+#tojwtivuxw .gt_font_bold {
   font-weight: bold;
 }
 
-#bwfyrwfphw .gt_font_italic {
+#tojwtivuxw .gt_font_italic {
   font-style: italic;
 }
 
-#bwfyrwfphw .gt_super {
+#tojwtivuxw .gt_super {
   font-size: 65%;
 }
 
-#bwfyrwfphw .gt_footnote_marks {
+#tojwtivuxw .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="bwfyrwfphw" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+<div id="tojwtivuxw" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
   
   <thead class="gt_col_headings">
     <tr>
@@ -1525,7 +1461,7 @@ tbl_head %&gt;%
   unnest(1:4) %&gt;%
   pivot_longer(cols = starts_with(&quot;includedRatingAreaCategory&quot;)) %&gt;%
   select(-name) %&gt;%
-  filter(value != &quot;NA&quot;)
+  filter(value != &quot;NULL&quot;)
 
 tbl_body %&gt;% 
   gt()</code></pre>
@@ -1533,7 +1469,7 @@ tbl_body %&gt;%
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#mkcwrdhvzu .gt_table {
+#falpilazfd .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -1558,7 +1494,7 @@ tbl_body %&gt;%
   border-left-color: #D3D3D3;
 }
 
-#mkcwrdhvzu .gt_heading {
+#falpilazfd .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1570,7 +1506,7 @@ tbl_body %&gt;%
   border-right-color: #D3D3D3;
 }
 
-#mkcwrdhvzu .gt_title {
+#falpilazfd .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1580,7 +1516,7 @@ tbl_body %&gt;%
   border-bottom-width: 0;
 }
 
-#mkcwrdhvzu .gt_subtitle {
+#falpilazfd .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1590,13 +1526,13 @@ tbl_body %&gt;%
   border-top-width: 0;
 }
 
-#mkcwrdhvzu .gt_bottom_border {
+#falpilazfd .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#mkcwrdhvzu .gt_col_headings {
+#falpilazfd .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1611,7 +1547,7 @@ tbl_body %&gt;%
   border-right-color: #D3D3D3;
 }
 
-#mkcwrdhvzu .gt_col_heading {
+#falpilazfd .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1631,7 +1567,7 @@ tbl_body %&gt;%
   overflow-x: hidden;
 }
 
-#mkcwrdhvzu .gt_column_spanner_outer {
+#falpilazfd .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1643,15 +1579,15 @@ tbl_body %&gt;%
   padding-right: 4px;
 }
 
-#mkcwrdhvzu .gt_column_spanner_outer:first-child {
+#falpilazfd .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#mkcwrdhvzu .gt_column_spanner_outer:last-child {
+#falpilazfd .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#mkcwrdhvzu .gt_column_spanner {
+#falpilazfd .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1663,7 +1599,7 @@ tbl_body %&gt;%
   width: 100%;
 }
 
-#mkcwrdhvzu .gt_group_heading {
+#falpilazfd .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1685,7 +1621,7 @@ tbl_body %&gt;%
   vertical-align: middle;
 }
 
-#mkcwrdhvzu .gt_empty_group_heading {
+#falpilazfd .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1700,15 +1636,15 @@ tbl_body %&gt;%
   vertical-align: middle;
 }
 
-#mkcwrdhvzu .gt_from_md > :first-child {
+#falpilazfd .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#mkcwrdhvzu .gt_from_md > :last-child {
+#falpilazfd .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#mkcwrdhvzu .gt_row {
+#falpilazfd .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1727,7 +1663,7 @@ tbl_body %&gt;%
   overflow-x: hidden;
 }
 
-#mkcwrdhvzu .gt_stub {
+#falpilazfd .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1739,7 +1675,7 @@ tbl_body %&gt;%
   padding-left: 12px;
 }
 
-#mkcwrdhvzu .gt_summary_row {
+#falpilazfd .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1749,7 +1685,7 @@ tbl_body %&gt;%
   padding-right: 5px;
 }
 
-#mkcwrdhvzu .gt_first_summary_row {
+#falpilazfd .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1759,7 +1695,7 @@ tbl_body %&gt;%
   border-top-color: #D3D3D3;
 }
 
-#mkcwrdhvzu .gt_grand_summary_row {
+#falpilazfd .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1769,7 +1705,7 @@ tbl_body %&gt;%
   padding-right: 5px;
 }
 
-#mkcwrdhvzu .gt_first_grand_summary_row {
+#falpilazfd .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1779,11 +1715,11 @@ tbl_body %&gt;%
   border-top-color: #D3D3D3;
 }
 
-#mkcwrdhvzu .gt_striped {
+#falpilazfd .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#mkcwrdhvzu .gt_table_body {
+#falpilazfd .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1792,7 +1728,7 @@ tbl_body %&gt;%
   border-bottom-color: #D3D3D3;
 }
 
-#mkcwrdhvzu .gt_footnotes {
+#falpilazfd .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1806,13 +1742,13 @@ tbl_body %&gt;%
   border-right-color: #D3D3D3;
 }
 
-#mkcwrdhvzu .gt_footnote {
+#falpilazfd .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#mkcwrdhvzu .gt_sourcenotes {
+#falpilazfd .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1826,46 +1762,46 @@ tbl_body %&gt;%
   border-right-color: #D3D3D3;
 }
 
-#mkcwrdhvzu .gt_sourcenote {
+#falpilazfd .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#mkcwrdhvzu .gt_left {
+#falpilazfd .gt_left {
   text-align: left;
 }
 
-#mkcwrdhvzu .gt_center {
+#falpilazfd .gt_center {
   text-align: center;
 }
 
-#mkcwrdhvzu .gt_right {
+#falpilazfd .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#mkcwrdhvzu .gt_font_normal {
+#falpilazfd .gt_font_normal {
   font-weight: normal;
 }
 
-#mkcwrdhvzu .gt_font_bold {
+#falpilazfd .gt_font_bold {
   font-weight: bold;
 }
 
-#mkcwrdhvzu .gt_font_italic {
+#falpilazfd .gt_font_italic {
   font-style: italic;
 }
 
-#mkcwrdhvzu .gt_super {
+#falpilazfd .gt_super {
   font-size: 65%;
 }
 
-#mkcwrdhvzu .gt_footnote_marks {
+#falpilazfd .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="mkcwrdhvzu" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+<div id="falpilazfd" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
   
   <thead class="gt_col_headings">
     <tr>
@@ -1899,60 +1835,11 @@ tbl_body %&gt;%
       <td class="gt_row gt_center">list("006"), list("209.866666666666657"), list("209.866666666666657"), list("209.866666666666657"), list("0.381610864040661"), list("1.302000000000000"), list("1000.000000000000000"), list("768.049155145929339")</td>
     </tr>
     <tr>
-      <td class="gt_row gt_center">22033VA0019999</td>
-      <td class="gt_row gt_center">1</td>
-      <td class="gt_row gt_center">On the Exchange</td>
-      <td class="gt_row gt_center">Gold</td>
-      <td class="gt_row gt_center"></td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_center">22033VA0041234</td>
-      <td class="gt_row gt_center">2</td>
-      <td class="gt_row gt_center">On the Exchange</td>
-      <td class="gt_row gt_center">Gold</td>
-      <td class="gt_row gt_center"></td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_center">22033VA0041234</td>
-      <td class="gt_row gt_center">2</td>
-      <td class="gt_row gt_center">On the Exchange</td>
-      <td class="gt_row gt_center">Gold</td>
-      <td class="gt_row gt_center"></td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_center">22033VA0041234</td>
-      <td class="gt_row gt_center">2</td>
-      <td class="gt_row gt_center">On the Exchange</td>
-      <td class="gt_row gt_center">Gold</td>
-      <td class="gt_row gt_center"></td>
-    </tr>
-    <tr>
       <td class="gt_row gt_center">22033VA0041234</td>
       <td class="gt_row gt_center">2</td>
       <td class="gt_row gt_center">On the Exchange</td>
       <td class="gt_row gt_center">Gold</td>
       <td class="gt_row gt_center">list("001"), list("36.499999999999998"), list("36.499999999999998"), list("36.499999999999998"), list("4.698370000000000"), list("1.302000000000000"), list("1000.000000000000000"), list("768.049155145929339")</td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_center">22033VA0049999</td>
-      <td class="gt_row gt_center">2</td>
-      <td class="gt_row gt_center">On the Exchange</td>
-      <td class="gt_row gt_center">Gold</td>
-      <td class="gt_row gt_center"></td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_center">22033VA0049999</td>
-      <td class="gt_row gt_center">2</td>
-      <td class="gt_row gt_center">On the Exchange</td>
-      <td class="gt_row gt_center">Gold</td>
-      <td class="gt_row gt_center"></td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_center">22033VA0049999</td>
-      <td class="gt_row gt_center">2</td>
-      <td class="gt_row gt_center">On the Exchange</td>
-      <td class="gt_row gt_center">Gold</td>
-      <td class="gt_row gt_center"></td>
     </tr>
     <tr>
       <td class="gt_row gt_center">22033VA0049999</td>
@@ -1976,20 +1863,6 @@ tbl_body %&gt;%
       <td class="gt_row gt_center">list("006"), list("12.166666666666666"), list("12.166666666666666"), list("12.166666666666666"), list("0.334000000000000"), list("1.302000000000000"), list("1000.000000000000000"), list("768.049155145929339")</td>
     </tr>
     <tr>
-      <td class="gt_row gt_center">22033VA0130001</td>
-      <td class="gt_row gt_center">1</td>
-      <td class="gt_row gt_center">On the Exchange</td>
-      <td class="gt_row gt_center">Platinum</td>
-      <td class="gt_row gt_center"></td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_center">22033VA0130001</td>
-      <td class="gt_row gt_center">1</td>
-      <td class="gt_row gt_center">On the Exchange</td>
-      <td class="gt_row gt_center">Platinum</td>
-      <td class="gt_row gt_center"></td>
-    </tr>
-    <tr>
       <td class="gt_row gt_center">22033VA0130014</td>
       <td class="gt_row gt_center">1</td>
       <td class="gt_row gt_center">On the Exchange</td>
@@ -2009,34 +1882,6 @@ tbl_body %&gt;%
       <td class="gt_row gt_center">On the Exchange</td>
       <td class="gt_row gt_center">Silver</td>
       <td class="gt_row gt_center">list("006"), list("18.166666666666666"), list("18.166666666666666"), list("18.166666666666666"), list("1.242470458715596"), list("1.302000000000000"), list("1000.000000000000000"), list("768.049155145929339")</td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_center">22033VA0130014</td>
-      <td class="gt_row gt_center">1</td>
-      <td class="gt_row gt_center">On the Exchange</td>
-      <td class="gt_row gt_center">Silver</td>
-      <td class="gt_row gt_center"></td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_center">22033VA0180001</td>
-      <td class="gt_row gt_center">1</td>
-      <td class="gt_row gt_center"> On the Exchange</td>
-      <td class="gt_row gt_center">Platinum</td>
-      <td class="gt_row gt_center"></td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_center">22033VA0180001</td>
-      <td class="gt_row gt_center">1</td>
-      <td class="gt_row gt_center"> On the Exchange</td>
-      <td class="gt_row gt_center">Platinum</td>
-      <td class="gt_row gt_center"></td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_center">22033VA0180001</td>
-      <td class="gt_row gt_center">1</td>
-      <td class="gt_row gt_center"> On the Exchange</td>
-      <td class="gt_row gt_center">Platinum</td>
-      <td class="gt_row gt_center"></td>
     </tr>
     <tr>
       <td class="gt_row gt_center">22033VA0180001</td>
@@ -2060,20 +1905,6 @@ tbl_body %&gt;%
       <td class="gt_row gt_center">list("002"), list("60.833333333333332"), list("60.833333333333332"), list("60.833333333333332"), list("3.834400000000000"), list("1.302000000000000"), list("178.726027397260269"), list("137.270374345053970")</td>
     </tr>
     <tr>
-      <td class="gt_row gt_center">22033VA3332222</td>
-      <td class="gt_row gt_center">1</td>
-      <td class="gt_row gt_center">On the Exchange</td>
-      <td class="gt_row gt_center">Platinum</td>
-      <td class="gt_row gt_center"></td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_center">22033VA3332222</td>
-      <td class="gt_row gt_center">1</td>
-      <td class="gt_row gt_center">On the Exchange</td>
-      <td class="gt_row gt_center">Platinum</td>
-      <td class="gt_row gt_center"></td>
-    </tr>
-    <tr>
       <td class="gt_row gt_center">22033VA4442222</td>
       <td class="gt_row gt_center">2</td>
       <td class="gt_row gt_center">On the Exchange</td>
@@ -2088,67 +1919,11 @@ tbl_body %&gt;%
       <td class="gt_row gt_center">list("002"), list("60.833333333333332"), list("60.833333333333332"), list("60.833333333333332"), list("3.834400000000000"), list("1.302000000000000"), list("50.802739726027397"), list("39.019001325673884")</td>
     </tr>
     <tr>
-      <td class="gt_row gt_center">22033VA4442222</td>
-      <td class="gt_row gt_center">2</td>
-      <td class="gt_row gt_center">On the Exchange</td>
-      <td class="gt_row gt_center">Platinum</td>
-      <td class="gt_row gt_center"></td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_center">22033VA4442222</td>
-      <td class="gt_row gt_center">2</td>
-      <td class="gt_row gt_center">On the Exchange</td>
-      <td class="gt_row gt_center">Platinum</td>
-      <td class="gt_row gt_center"></td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_center">22033VT0000101</td>
-      <td class="gt_row gt_center">1</td>
-      <td class="gt_row gt_center">On the Exchange</td>
-      <td class="gt_row gt_center">Silver</td>
-      <td class="gt_row gt_center"></td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_center">22033VT0000101</td>
-      <td class="gt_row gt_center">1</td>
-      <td class="gt_row gt_center">On the Exchange</td>
-      <td class="gt_row gt_center">Silver</td>
-      <td class="gt_row gt_center"></td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_center">22033VT0000101</td>
-      <td class="gt_row gt_center">1</td>
-      <td class="gt_row gt_center">On the Exchange</td>
-      <td class="gt_row gt_center">Silver</td>
-      <td class="gt_row gt_center"></td>
-    </tr>
-    <tr>
       <td class="gt_row gt_center">22033VT0000101</td>
       <td class="gt_row gt_center">1</td>
       <td class="gt_row gt_center">On the Exchange</td>
       <td class="gt_row gt_center">Silver</td>
       <td class="gt_row gt_center">list("001"), list("12.166666666666666"), list("12.166666666666666"), list("12.166666666666666"), list("4.227000000000000"), list("1.000000000000000"), list("1000.000000000000000"), list("1000.000000000000000")</td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_center">22033VT0000201</td>
-      <td class="gt_row gt_center">2</td>
-      <td class="gt_row gt_center">On the Exchange</td>
-      <td class="gt_row gt_center">Silver</td>
-      <td class="gt_row gt_center"></td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_center">22033VT0000201</td>
-      <td class="gt_row gt_center">2</td>
-      <td class="gt_row gt_center">On the Exchange</td>
-      <td class="gt_row gt_center">Silver</td>
-      <td class="gt_row gt_center"></td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_center">22033VT0000201</td>
-      <td class="gt_row gt_center">2</td>
-      <td class="gt_row gt_center">On the Exchange</td>
-      <td class="gt_row gt_center">Silver</td>
-      <td class="gt_row gt_center"></td>
     </tr>
     <tr>
       <td class="gt_row gt_center">22033VT0000201</td>
@@ -2169,13 +1944,13 @@ tbl_body %&gt;%
 
 tbl_main %&gt;% 
   mutate(across(enrolleeMemberMonths:planAgeAvePremium, as.numeric)) %&gt;% 
-  gt() %&gt;% 
+  gt() %&gt;%
   fmt_number(columns = 6:last_col())</code></pre>
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#zvkfamrftj .gt_table {
+#aywxwvtbxn .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -2200,7 +1975,7 @@ tbl_main %&gt;%
   border-left-color: #D3D3D3;
 }
 
-#zvkfamrftj .gt_heading {
+#aywxwvtbxn .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2212,7 +1987,7 @@ tbl_main %&gt;%
   border-right-color: #D3D3D3;
 }
 
-#zvkfamrftj .gt_title {
+#aywxwvtbxn .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2222,7 +1997,7 @@ tbl_main %&gt;%
   border-bottom-width: 0;
 }
 
-#zvkfamrftj .gt_subtitle {
+#aywxwvtbxn .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2232,13 +2007,13 @@ tbl_main %&gt;%
   border-top-width: 0;
 }
 
-#zvkfamrftj .gt_bottom_border {
+#aywxwvtbxn .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#zvkfamrftj .gt_col_headings {
+#aywxwvtbxn .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2253,7 +2028,7 @@ tbl_main %&gt;%
   border-right-color: #D3D3D3;
 }
 
-#zvkfamrftj .gt_col_heading {
+#aywxwvtbxn .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2273,7 +2048,7 @@ tbl_main %&gt;%
   overflow-x: hidden;
 }
 
-#zvkfamrftj .gt_column_spanner_outer {
+#aywxwvtbxn .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2285,15 +2060,15 @@ tbl_main %&gt;%
   padding-right: 4px;
 }
 
-#zvkfamrftj .gt_column_spanner_outer:first-child {
+#aywxwvtbxn .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#zvkfamrftj .gt_column_spanner_outer:last-child {
+#aywxwvtbxn .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#zvkfamrftj .gt_column_spanner {
+#aywxwvtbxn .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2305,7 +2080,7 @@ tbl_main %&gt;%
   width: 100%;
 }
 
-#zvkfamrftj .gt_group_heading {
+#aywxwvtbxn .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2327,7 +2102,7 @@ tbl_main %&gt;%
   vertical-align: middle;
 }
 
-#zvkfamrftj .gt_empty_group_heading {
+#aywxwvtbxn .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2342,15 +2117,15 @@ tbl_main %&gt;%
   vertical-align: middle;
 }
 
-#zvkfamrftj .gt_from_md > :first-child {
+#aywxwvtbxn .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#zvkfamrftj .gt_from_md > :last-child {
+#aywxwvtbxn .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#zvkfamrftj .gt_row {
+#aywxwvtbxn .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2369,7 +2144,7 @@ tbl_main %&gt;%
   overflow-x: hidden;
 }
 
-#zvkfamrftj .gt_stub {
+#aywxwvtbxn .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2381,7 +2156,7 @@ tbl_main %&gt;%
   padding-left: 12px;
 }
 
-#zvkfamrftj .gt_summary_row {
+#aywxwvtbxn .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2391,7 +2166,7 @@ tbl_main %&gt;%
   padding-right: 5px;
 }
 
-#zvkfamrftj .gt_first_summary_row {
+#aywxwvtbxn .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2401,7 +2176,7 @@ tbl_main %&gt;%
   border-top-color: #D3D3D3;
 }
 
-#zvkfamrftj .gt_grand_summary_row {
+#aywxwvtbxn .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2411,7 +2186,7 @@ tbl_main %&gt;%
   padding-right: 5px;
 }
 
-#zvkfamrftj .gt_first_grand_summary_row {
+#aywxwvtbxn .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2421,11 +2196,11 @@ tbl_main %&gt;%
   border-top-color: #D3D3D3;
 }
 
-#zvkfamrftj .gt_striped {
+#aywxwvtbxn .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#zvkfamrftj .gt_table_body {
+#aywxwvtbxn .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2434,7 +2209,7 @@ tbl_main %&gt;%
   border-bottom-color: #D3D3D3;
 }
 
-#zvkfamrftj .gt_footnotes {
+#aywxwvtbxn .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2448,13 +2223,13 @@ tbl_main %&gt;%
   border-right-color: #D3D3D3;
 }
 
-#zvkfamrftj .gt_footnote {
+#aywxwvtbxn .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#zvkfamrftj .gt_sourcenotes {
+#aywxwvtbxn .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2468,46 +2243,46 @@ tbl_main %&gt;%
   border-right-color: #D3D3D3;
 }
 
-#zvkfamrftj .gt_sourcenote {
+#aywxwvtbxn .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#zvkfamrftj .gt_left {
+#aywxwvtbxn .gt_left {
   text-align: left;
 }
 
-#zvkfamrftj .gt_center {
+#aywxwvtbxn .gt_center {
   text-align: center;
 }
 
-#zvkfamrftj .gt_right {
+#aywxwvtbxn .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#zvkfamrftj .gt_font_normal {
+#aywxwvtbxn .gt_font_normal {
   font-weight: normal;
 }
 
-#zvkfamrftj .gt_font_bold {
+#aywxwvtbxn .gt_font_bold {
   font-weight: bold;
 }
 
-#zvkfamrftj .gt_font_italic {
+#aywxwvtbxn .gt_font_italic {
   font-style: italic;
 }
 
-#zvkfamrftj .gt_super {
+#aywxwvtbxn .gt_super {
   font-size: 65%;
 }
 
-#zvkfamrftj .gt_footnote_marks {
+#aywxwvtbxn .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="zvkfamrftj" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+<div id="aywxwvtbxn" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
   
   <thead class="gt_col_headings">
     <tr>
@@ -2569,62 +2344,6 @@ tbl_main %&gt;%
       <td class="gt_row gt_right">768.05</td>
     </tr>
     <tr>
-      <td class="gt_row gt_left">22033VA0019999</td>
-      <td class="gt_row gt_left">1</td>
-      <td class="gt_row gt_left">On the Exchange</td>
-      <td class="gt_row gt_left">Gold</td>
-      <td class="gt_row gt_left">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_left">22033VA0041234</td>
-      <td class="gt_row gt_left">2</td>
-      <td class="gt_row gt_left">On the Exchange</td>
-      <td class="gt_row gt_left">Gold</td>
-      <td class="gt_row gt_left">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_left">22033VA0041234</td>
-      <td class="gt_row gt_left">2</td>
-      <td class="gt_row gt_left">On the Exchange</td>
-      <td class="gt_row gt_left">Gold</td>
-      <td class="gt_row gt_left">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_left">22033VA0041234</td>
-      <td class="gt_row gt_left">2</td>
-      <td class="gt_row gt_left">On the Exchange</td>
-      <td class="gt_row gt_left">Gold</td>
-      <td class="gt_row gt_left">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-    </tr>
-    <tr>
       <td class="gt_row gt_left">22033VA0041234</td>
       <td class="gt_row gt_left">2</td>
       <td class="gt_row gt_left">On the Exchange</td>
@@ -2637,48 +2356,6 @@ tbl_main %&gt;%
       <td class="gt_row gt_right">1.30</td>
       <td class="gt_row gt_right">1,000.00</td>
       <td class="gt_row gt_right">768.05</td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_left">22033VA0049999</td>
-      <td class="gt_row gt_left">2</td>
-      <td class="gt_row gt_left">On the Exchange</td>
-      <td class="gt_row gt_left">Gold</td>
-      <td class="gt_row gt_left">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_left">22033VA0049999</td>
-      <td class="gt_row gt_left">2</td>
-      <td class="gt_row gt_left">On the Exchange</td>
-      <td class="gt_row gt_left">Gold</td>
-      <td class="gt_row gt_left">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_left">22033VA0049999</td>
-      <td class="gt_row gt_left">2</td>
-      <td class="gt_row gt_left">On the Exchange</td>
-      <td class="gt_row gt_left">Gold</td>
-      <td class="gt_row gt_left">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
     </tr>
     <tr>
       <td class="gt_row gt_left">22033VA0049999</td>
@@ -2723,34 +2400,6 @@ tbl_main %&gt;%
       <td class="gt_row gt_right">768.05</td>
     </tr>
     <tr>
-      <td class="gt_row gt_left">22033VA0130001</td>
-      <td class="gt_row gt_left">1</td>
-      <td class="gt_row gt_left">On the Exchange</td>
-      <td class="gt_row gt_left">Platinum</td>
-      <td class="gt_row gt_left">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_left">22033VA0130001</td>
-      <td class="gt_row gt_left">1</td>
-      <td class="gt_row gt_left">On the Exchange</td>
-      <td class="gt_row gt_left">Platinum</td>
-      <td class="gt_row gt_left">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-    </tr>
-    <tr>
       <td class="gt_row gt_left">22033VA0130014</td>
       <td class="gt_row gt_left">1</td>
       <td class="gt_row gt_left">On the Exchange</td>
@@ -2791,62 +2440,6 @@ tbl_main %&gt;%
       <td class="gt_row gt_right">1.30</td>
       <td class="gt_row gt_right">1,000.00</td>
       <td class="gt_row gt_right">768.05</td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_left">22033VA0130014</td>
-      <td class="gt_row gt_left">1</td>
-      <td class="gt_row gt_left">On the Exchange</td>
-      <td class="gt_row gt_left">Silver</td>
-      <td class="gt_row gt_left">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_left">22033VA0180001</td>
-      <td class="gt_row gt_left">1</td>
-      <td class="gt_row gt_left"> On the Exchange </td>
-      <td class="gt_row gt_left">Platinum</td>
-      <td class="gt_row gt_left">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_left">22033VA0180001</td>
-      <td class="gt_row gt_left">1</td>
-      <td class="gt_row gt_left"> On the Exchange </td>
-      <td class="gt_row gt_left">Platinum</td>
-      <td class="gt_row gt_left">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_left">22033VA0180001</td>
-      <td class="gt_row gt_left">1</td>
-      <td class="gt_row gt_left"> On the Exchange </td>
-      <td class="gt_row gt_left">Platinum</td>
-      <td class="gt_row gt_left">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
     </tr>
     <tr>
       <td class="gt_row gt_left">22033VA0180001</td>
@@ -2891,34 +2484,6 @@ tbl_main %&gt;%
       <td class="gt_row gt_right">137.27</td>
     </tr>
     <tr>
-      <td class="gt_row gt_left">22033VA3332222</td>
-      <td class="gt_row gt_left">1</td>
-      <td class="gt_row gt_left">On the Exchange</td>
-      <td class="gt_row gt_left">Platinum</td>
-      <td class="gt_row gt_left">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_left">22033VA3332222</td>
-      <td class="gt_row gt_left">1</td>
-      <td class="gt_row gt_left">On the Exchange</td>
-      <td class="gt_row gt_left">Platinum</td>
-      <td class="gt_row gt_left">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-    </tr>
-    <tr>
       <td class="gt_row gt_left">22033VA4442222</td>
       <td class="gt_row gt_left">2</td>
       <td class="gt_row gt_left">On the Exchange</td>
@@ -2947,76 +2512,6 @@ tbl_main %&gt;%
       <td class="gt_row gt_right">39.02</td>
     </tr>
     <tr>
-      <td class="gt_row gt_left">22033VA4442222</td>
-      <td class="gt_row gt_left">2</td>
-      <td class="gt_row gt_left">On the Exchange</td>
-      <td class="gt_row gt_left">Platinum</td>
-      <td class="gt_row gt_left">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_left">22033VA4442222</td>
-      <td class="gt_row gt_left">2</td>
-      <td class="gt_row gt_left">On the Exchange</td>
-      <td class="gt_row gt_left">Platinum</td>
-      <td class="gt_row gt_left">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_left">22033VT0000101</td>
-      <td class="gt_row gt_left">1</td>
-      <td class="gt_row gt_left">On the Exchange</td>
-      <td class="gt_row gt_left">Silver</td>
-      <td class="gt_row gt_left">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_left">22033VT0000101</td>
-      <td class="gt_row gt_left">1</td>
-      <td class="gt_row gt_left">On the Exchange</td>
-      <td class="gt_row gt_left">Silver</td>
-      <td class="gt_row gt_left">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_left">22033VT0000101</td>
-      <td class="gt_row gt_left">1</td>
-      <td class="gt_row gt_left">On the Exchange</td>
-      <td class="gt_row gt_left">Silver</td>
-      <td class="gt_row gt_left">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-    </tr>
-    <tr>
       <td class="gt_row gt_left">22033VT0000101</td>
       <td class="gt_row gt_left">1</td>
       <td class="gt_row gt_left">On the Exchange</td>
@@ -3029,48 +2524,6 @@ tbl_main %&gt;%
       <td class="gt_row gt_right">1.00</td>
       <td class="gt_row gt_right">1,000.00</td>
       <td class="gt_row gt_right">1,000.00</td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_left">22033VT0000201</td>
-      <td class="gt_row gt_left">2</td>
-      <td class="gt_row gt_left">On the Exchange</td>
-      <td class="gt_row gt_left">Silver</td>
-      <td class="gt_row gt_left">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_left">22033VT0000201</td>
-      <td class="gt_row gt_left">2</td>
-      <td class="gt_row gt_left">On the Exchange</td>
-      <td class="gt_row gt_left">Silver</td>
-      <td class="gt_row gt_left">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-    </tr>
-    <tr>
-      <td class="gt_row gt_left">22033VT0000201</td>
-      <td class="gt_row gt_left">2</td>
-      <td class="gt_row gt_left">On the Exchange</td>
-      <td class="gt_row gt_left">Silver</td>
-      <td class="gt_row gt_left">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
-      <td class="gt_row gt_right">NA</td>
     </tr>
     <tr>
       <td class="gt_row gt_left">22033VT0000201</td>

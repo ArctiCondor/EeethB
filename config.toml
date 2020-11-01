@@ -1,40 +1,132 @@
-baseurl = "/"
+######################## default configuration ####################
+baseURL = "https://stupefied-lamarr-5418b7.netlify.app"
+title = "yarb | yet another rstats blog"
+theme = "persian-hugo"
+languageName = "En"
 languageCode = "en-us"
-title = "yet another rstats blog"
-theme = "hugo-xmin"
-googleAnalytics = ""
-disqusShortname = ""
+# post pagination
+paginate = "3"
+# disqus short name
+disqusShortname = "" # get your shortname form here : https://disqus.com
+# ignore files
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
-footnotereturnlinkcontents = "↩"
 
-[permalinks]
-    post = "/post/:year/:slug/"
-    note = "/note/:year/:slug/"
+############################# output ##############################
+[outputs]
+home = [ "HTML", "RSS", "json"]
+
+# render unsafe html
+[markup.goldmark.renderer]
+unsafe = true
+
+############################# Plugins ##############################
+# CSS Plugins
+[[params.plugins.css]]
+link = "plugins/bootstrap/bootstrap.min.css"
+[[params.plugins.css]]
+link = "plugins/themify-icons/themify-icons.css"
+
+# JS Plugins
+[[params.plugins.js]]
+link = "plugins/jQuery/jquery.min.js"
+[[params.plugins.js]]
+link = "plugins/bootstrap/bootstrap.min.js"
+[[params.plugins.js]]
+link = "plugins/search/fuse.min.js"
+[[params.plugins.js]]
+link = "plugins/search/mark.js"
+[[params.plugins.js]]
+link = "plugins/search/search.js"
+
+
+################################ menu ##################################
+[[menu.main]]
+  name = "Home"
+  URL = "/"
+  weight = 1
 
 [[menu.main]]
-    name = "Home"
-    url = "/"
-    weight = 1
+  name = "About"
+  URL = "about"
+  weight = 2
+
+#[[menu.main]]
+#  name = "Category"
+#  URL = "/categories/"
+#  weight = 3
+#
+#[[menu.main]]
+#  name = "Tags"
+#  url = "/tags/"
+#  weight = 4
+
 [[menu.main]]
-    name = "About"
-    url = "/about/"
-    weight = 2
-[[menu.main]]
-    name = "Categories"
-    url = "/categories/"
-    weight = 3
-[[menu.main]]
-    name = "Tags"
-    url = "/tags/"
-    weight = 4
-[[menu.main]]
-    name = "Resume"
-    url = "/resume.pdf"
+  name = "Apps"
+  URL = "http://apps.ethanbrockmann.com"
+  weight = 5
     
 [[menu.main]]
-    name = "Apps"
-    url = "http://apps.ethanbrockmann.com"
+  name = "Resume"
+  url = "/resume.pdf"
+  weight = 6
 
+# [[menu.main]]
+# name = "Contact"
+# URL = "contact"
+# weight = 4
+
+# [[menu.main]]
+# name = "Privacy Policy"
+# URL = "privacy-policy"
+# weight = 5
+
+
+#################### default parameters ################################
 [params]
-    description = "Ethan Brockmann's personal website"
-    footer = "[Github](https://github.com/ArctiCondor) | [Twitter](https://twitter.com/EeethB) | [RStudio Community](https://community.rstudio.com/u/ArctiCondor) | ethanbrockmann@gmail.com"
+logo = "images/logo.png"
+# Meta data
+description = "Personal website for Ethan Brockmann"
+author = "Themefisher"
+# search  
+search = true
+# contact form action
+contact_form_action = "#" # contact form works with https://formspree.io
+# copyright
+copyright = "Designed By [Themefisher](https://themefisher.com/) & Developed By [Gethugothemes](https://gethugothemes.com/)"
+
+# Preloader
+[params.preloader]
+enable = true
+preloader = "" # use jpg, png, svg or gif format.
+
+# cookies
+[params.cookies]
+enable = true
+expire_days = 2
+
+
+############################# social site ########################
+[[params.social]]
+title = "facebook"
+icon = "ti-facebook" # themify icon : https://themify.me/themify-icons
+link = "#"
+
+[[params.social]]
+title = "twitter"
+icon = "ti-twitter-alt" # themify icon : https://themify.me/themify-icons
+link = "EeethB"
+
+[[params.social]]
+title = "instagram"
+icon = "ti-instagram" # themify icon : https://themify.me/themify-icons
+link = "#"
+
+[[params.social]]
+title = "github"
+icon = "ti-github" # themify icon : https://themify.me/themify-icons
+link = "#"
+
+[[params.social]]
+title = "linkedin"
+icon = "ti-linkedin" # themify icon : https://themify.me/themify-icons
+link = "#"
