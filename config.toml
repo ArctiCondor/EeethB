@@ -59,11 +59,11 @@ link = "plugins/search/search.js"
 #  name = "Tags"
 #  url = "/tags/"
 #  weight = 4
-
-[[menu.main]]
-  name = "Apps"
-  URL = "http://apps.ethanbrockmann.com"
-  weight = 5
+#
+#[[menu.main]]
+#  name = "Apps"
+#  URL = "http://apps.ethanbrockmann.com"
+#  weight = 5
     
 [[menu.main]]
   name = "Resume"
