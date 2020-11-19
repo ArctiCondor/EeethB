@@ -1,23 +1,22 @@
 # Page settings
 
-baseURL = "https://example.org/"
+baseURL = "http://example.org/"
 languageCode = "en"
 title = ""
 theme = "hugo-devresume-theme"
 googleAnalytics = "UA-XXXXXXX-Y"
 
-ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+
 
 
 
 
 [params]
-    author = "Ethan Brockmann"
-    description = "Ethan Brockmann's CV"
+    author = "CowboySmall"
+    description = "DevResume - Bootstrap 4 Resume/CV Template For Software Developers"
 
 
-#    primaryColor = "#54B689"
-    primaryColor = "#8080ff"
+    primaryColor = "#54B689"
     textPrimaryColor = "#292929"
 
 
@@ -25,9 +24,9 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
     [params.profile]
         enable = true
-        name = "Ethan Brockmann"
-        tagline = "Actuarial Analyst, R Developer"
-#        avatar = "avatar.png"
+        name = "Simon Doe"
+        tagline = "Senior Software Engineer"
+        avatar = "avatar.png"
 
 
 
@@ -37,20 +36,20 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
     [params.contact]
         enable = true
-        location = "Jackson, MS"
+        location = "New York"
 
         [[params.contact.list]]
         icon = "fas fa-phone-square"
         url = "tel:#"
-        text = "920 728 5600"
+        text = "0123 4567 890"
         [[params.contact.list]]
         icon = "fas fa-envelope-square"
         url = "mailto:#"
-        text = "ethanbrockmann@gmail.com"
+        text = "simon.doe@yourwebsite.com"
         [[params.contact.list]]
         icon = "fas fa-globe"
         url = "#"
-        text = "ethanbrockmann.com"
+        text = "www.yourwebsite.com"
 
 
 
@@ -99,11 +98,14 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     [params.education]
         enable = true
 
-
         [[params.education.list]]
-        degree = "BS Mathematics"
-        university = "Mississippi State University"
-        dates = "2013 - 2017"
+        degree = "MSc in Computer Science"
+        university = "University College London"
+        dates = "2010 - 2011"
+        [[params.education.list]]
+        degree = "BSc Maths and Physics"
+        university = "Imperial College London"
+        dates = "2007 - 2010"
 
 
 
