@@ -9,7 +9,7 @@ paginate = "3"
 # disqus short name
 disqusShortname = "" # get your shortname form here : https://disqus.com
 # ignore files
-ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$", "README.html"]
 
 ############################# output ##############################
 [outputs]
