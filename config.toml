@@ -59,11 +59,11 @@ link = "plugins/search/search.js"
 #  name = "Tags"
 #  url = "/tags/"
 #  weight = 4
-#
-#[[menu.main]]
-#  name = "Apps"
-#  URL = "http://apps.ethanbrockmann.com"
-#  weight = 5
+
+[[menu.main]]
+  name = "Apps"
+  URL = "http://apps.ethanbrockmann.com"
+  weight = 5
     
 [[menu.main]]
   name = "Resume"
@@ -92,7 +92,8 @@ search = true
 # contact form action
 contact_form_action = "#" # contact form works with https://formspree.io
 # copyright
-copyright = "Designed By [Themefisher](https://themefisher.com/) & Developed By [Gethugothemes](https://gethugothemes.com/)"
+# copyright = "Designed By [Themefisher](https://themefisher.com/) & Developed By [Gethugothemes](https://gethugothemes.com/)"
+copyright = "<img class=\"fab fa-twitter\"></img>"
 
 # Preloader
 [params.preloader]
