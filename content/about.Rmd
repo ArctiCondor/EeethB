@@ -1,8 +1,12 @@
 ---
 title: About
 image: images/post/about.jpg
+output: html_document
 ---
 
+```{r setup, include=FALSE}
+htmltools::tagList(rmarkdown::html_dependency_font_awesome())
+```
 ### About me
 
 Hello, and welcome to *yet another rstats blog*! My name is Ethan Brockmann.
@@ -23,6 +27,8 @@ I attained a BS in mathematics from Mississippi State University with a minor in
 
 When I'm not working or learning more about R, you can find me spending time with family or climbing on my home bouldering wall. I also enjoy reading psychology books, such as *The Body Keeps the Score*.
 
-<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<!-- <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"> -->
 
-<i class="fab fa-twitter"></i>
+<!-- This is a FontAwesome icon: <i class="fab fa-twitter"></i>. -->
+
+<!-- <i class="fa fa-file"></i> -->

@@ -2,84 +2,42 @@
 name: Ethan Brockmann
 address: "740 Hartwood, Brandon, MS 39042"
 phone: (920) 728-5600
+date: "`r format(Sys.Date(), '%B %Y')`"
 email: "ethanbrockmann@gmail.com"
+www: ethanbrockmann.com
 github: EeethB
 twitter: EeethB
-www: eeethb.rbind.io
-community: EeethB
 angellist: ethan-brockmann
-linkedin: ethan-brockmann
-date: "`r format(Sys.time(), '%B %Y')`"
+community: EeethB
 output: vitae::awesomecv
+aboutme: Full stack data analyst. Always looking for questions and answers in the data. Known for insightful questions, passionate efficiency, and clear communication. We all do our best work in environments that value diversity and inclusion of all kinds.
 ---
-
-# Programming Experience - R, Python, C, C++, SQL, VBA
-
-  - Author and maintainer of the [`edgedata`](https://github.com/ArctiCondor/edgedata) package on CRAN
-  
-  - Author and maintainer of an internal organizational R package for safely working with company's database
-  
-  - Familiarity with git and Github workflows
-  
-  - 3 years using SQL and SAS to query large (>10,000,000 rows) data sets and compile insightful reports for company management
-  
-  - 1.5 years of experience using Python and R for data science and data viz
-  
-  - 1.5 years of experience building static and interactive reports with R Markdown, Jupyter notebooks, and R Shiny
-
-  - Front-end and back-end university classes in C++ and Python
-  
-  - Experience creating, reviewing, and updating large Excel models, often including VBA development
-  
-  - Familiarity with C, HTML, CSS, and Javascript
-  
-  - Authored research paper and other senior seminar papers in \LaTeX with LyX
-
-# Education
-
-Bachelor of Science in Mathematics. Minor in Computer Science. Mississippi State University, Starkville, MS. GPA 3.92/4.00. May 2017 
-
-Passed actuarial exams P, FM, IFM, SRM, and LTAM
-
-# Research Experience
-
-Undergraduate Research Project in Graph Theory. Mississippi State University. August 2015-December 2015 
-
-  - Worked with the independence polynomials of claw free graphs and trees 
-
-  - Paper available here: https://osebje.famnit.upr.si/~russ.woodroofe/ethan-brockmann.pdf 
-
-  - Sage code available here: https://osebje.famnit.upr.si/~russ.woodroofe/ethan-brockmann.sage
 
 # Work Experience
 
-**Actuarial Analyst**. BlueCross BlueShield of Mississippi. Flowood, MS. June 2017 – Present 
+**Actuarial Analyst, R Developer**. BlueCross BlueShield of Mississippi. Flowood, MS. June 2017 – Present 
   
-  - Go-to analyst for data requests from the CFO and CEO
+  - Team lead on large group underwriting: Includes updating and streamlining old processes to be more transparent, accurate, and reproducible
   
-  - Regular written and occasional oral communication with company management
+  - Formerly team lead for EDGE server and risk adjustment: Included building new infrastructure for data reporting and quality assurance, as well as updating current processes to ensure accuracy and efficiency
   
-  - Created an interactive, longitudinal report to track the predictive power of a licensed predictive model
+  - Saved the company millions each year in risk adjustment transfers by ensuring quality in data submissions
+  
+  - Author and maintainer of an internal R package for safely interacting with the company's database
+  
+  - Mentored several more junior employees, training them in technical project details, documentation best practices, and workflow recommendations to ensure ownership of projects as well as smooth transitions to other analysts in the future
+  
+  - Built scalable big data reporting and visualization for company leadership using SQL, R, and Excel
   
   - Working knowledge of many statistical methods
   
-  - Decision-maker for all things related to EDGE server and risk adjustment, saving the company millions of dollars each year
-
-  - Entrusted with leading the R and data science movement at the company
-  
-  - Author and maintainer of an internal R package to safely interact with the company's database
-  
-  - Daily technical review of colleagues' work
-  
-  - Champion or runner-up in each of the last 3 company-wide Ultimate Frisbee tournaments
-  
 **Actuarial Student Intern**. BlueCross BlueShield of Mississippi. Flowood, MS. May 2016 – August 2016 
 
-  - Assisted actuarial personnel in core actuarial functions 
-
-  - Capstone project involved building member risk profiles with diagnosis codes and searching for suspected missing codes
+  - Built a predictive model to find unreported risk in small group and individual populations
   
-  - Presented findings to the CFO
+  - Presented technical capstone project to non-technical senior management
+
+  - Assisted actuarial personnel in core actuarial functions
 
 **Math Tutor**. Mississippi State University. Starkville, MS. November 2014 – December 2015 
 
@@ -109,6 +67,32 @@ Undergraduate Research Project in Graph Theory. Mississippi State University. Au
   
   - Supervised a team of other employees
   
+# Side Projects
+
+  - Author and maintainer of the [`edgedata`](https://github.com/EeethB/edgedata) package on CRAN
+  
+  - Proficient with Git and Github workflows, including completion of the fantastic [ooloo.io](https://ooloo.io/project/github-flow) tutorial, which gives the experience of working with Git in a team environment
+  
+  - Set up a Shiny Server instance using Docker to host interactive R Shiny applications
+  
+  - Experienced with Windows command line and Linux terminal
+  
+  - Familiarity with C, C++, HTML, CSS, \LaTeX
+  
+  - Passed actuarial exams P, FM, IFM, SRM, and LTAM
+
+# Education
+
+**Bachelor of Science in Mathematics**. Mississippi State University, Starkville, MS. GPA 3.9/4.0. May 2017 
+
+  - Minor in Computer Science
+  
+  - Undergraduate research project in graph theory working with the independence polynomials of claw free graphs and trees: https://osebje.famnit.upr.si/~russ.woodroofe/ethan-brockmann.pdf 
+
+  - Split level user interface design class included building a real-use interface design for Fedex using Python
+  
+  - Grader, Math tutor, MSU Outdoor Adventures, and Starkville Russian Club
+
 # Other Skills
 
  - Attention to detail
