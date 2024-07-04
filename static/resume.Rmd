@@ -1,107 +1,76 @@
 ---
 name: Ethan Brockmann
-address: "740 Hartwood, Brandon, MS 39042"
+address: "2522 Old Brandon Rd, Pearl, MS 39208"
 phone: (920) 728-5600
 date: "`r format(Sys.Date(), '%B %Y')`"
 email: "ethanbrockmann@gmail.com"
-www: ethanbrockmann.com
-github: EeethB
-twitter: EeethB
-angellist: ethan-brockmann
-community: EeethB
 output: vitae::awesomecv
-aboutme: Full stack data analyst. Always looking for questions and answers in the data. Known for insightful questions, passionate efficiency, and clear communication. We all do our best work in environments that value diversity and inclusion of all kinds.
+aboutme: Project manager and R liaison. Always striving to make data science smoother and more effective. Known for tidy projects, clarifying questions, and tending to the boring stuff. My super power is admitting what I don't know and asking questions.
 ---
 
 # Work Experience
 
-**Actuarial Analyst, R Developer**. BlueCross BlueShield of Mississippi. Flowood, MS. June 2017 – Present 
+**Data Solutions Engineer**. Atorus Research. Newtown Square, PA. November 2022 - Present
   
-  - Team lead on large group underwriting: Includes updating and streamlining old processes to be more transparent, accurate, and reproducible
+  - Client A: Posit Pro and validation project management
+    
+    - Liaised with IT and R developers to launch the company's first GxP validated Shiny application
+    
+    - Project manager for developing and documenting a GxP validated R environment in order to scale R usage from 10 to 60 Workbench users
   
-  - Formerly team lead for EDGE server and risk adjustment: Included building new infrastructure for data reporting and quality assurance, as well as updating current processes to ensure accuracy and efficiency
+    - Managed development of the company's first systems development life cycle documentation for shiny apps and packages
+    
+    - As admin for Posit Pro products, established a formal ticketing system for Biometrics R users
+    
+    - Advising on Posit Pro product configuration changes to meet the needs of data scientists
+
+  - Client B: Open-source development
+
+    - Author and project manager for the [`graphicalMCP`](https://github.com/Gilead-BioStats/graphicalMCP) package, which enables visual representations of complex clinical trials
+    
+    - Presented the package to client leadership and publicly at pharmaSUG 2024
+    
+  - Internal Atorus
+    
+    - Included on technical sales calls for expanding business with a client
   
-  - Saved the company millions each year in risk adjustment transfers by ensuring quality in data submissions
+    - Led development sprints with employees from 5 companies as project manager for the [`xportr`](https://github.com/Atorus-Research/xportr) package
+    
+    - Wrote internal documentation on validation and server connection
+
+**Actuarial Analyst, R Developer**. CareSource. Dayton, OH. April 2021 – October 2022
+  
+  - Coordinated with Actuarial, IT, and Finance to define a new Actuarial data mart for efficiency and data quality
+
+  - Built new financial forecast model and presented results to Actuarial leadership for company budget planning and pricing strategy
+  
+  - Launched and led the company's first R user group
+  
+  - Consulted as R SME for project transitions to R within Finance
+
+**Actuarial Analyst, R Developer**. BlueCross BlueShield of Mississippi. Flowood, MS. June 2017 – April 2021
+
+  - Coordinated with Actuarial, Sales, and Underwriting to set premium rates on time for new and existing large groups
+  
+  - Saved the company millions in risk adjustment transfers by coordinating with Actuarial, IT, and the federal government to ensure timeline integrity, data quality, and process documentation
   
   - Author and maintainer of an internal R package for safely interacting with the company's database
   
-  - Mentored several more junior employees, training them in technical project details, documentation best practices, and workflow recommendations to ensure ownership of projects as well as smooth transitions to other analysts in the future
+  - Mentored more junior employees, training them in technical project details, documentation best practices, and workflow recommendations
   
-  - Built scalable big data reporting and visualization for company leadership using SQL, R, and Excel
-  
-  - Working knowledge of many statistical methods
-  
-**Actuarial Student Intern**. BlueCross BlueShield of Mississippi. Flowood, MS. May 2016 – August 2016 
+<!-- # Side Projects -->
 
-  - Built a predictive model to find unreported risk in small group and individual populations
-  
-  - Presented technical capstone project to non-technical senior management
+<!--   - Author and maintainer of the [`edgedata`](https://github.com/EeethB/edgedata) package on CRAN -->
 
-  - Assisted actuarial personnel in core actuarial functions
+<!--   - Set up a local Shiny Server instance using Docker -->
 
-**Math Tutor**. Mississippi State University. Starkville, MS. November 2014 – December 2015 
-
-  - Provided additional help to students in historically difficult classes 
-
-  - Tutored students in algebra, trigonometry, calculus, linear algebra, basic mathematical proof classes, and chemistry 
-  
-  - Helped one student improve 30% from the first to the second test
-   
-**Rock Climbing Guide**. Mississippi State University. Starkville, MS. May - August 2015
-
-  - Provided support, guidance, and belay services to patrons of the indoor climbing wall
-  
-  - Entrusted with opening and closing duties
-  
-**Soft Serve Specialist**. Frostie Freeze. Fort Atkinson, WI. March - October, 2009 - 2013
-
-  - Took orders and payments, crafted treats, and performed behind-the-scenes cleaning and maintenance
-  
-  - Entrusted with opening and closing duties
-  
-  - Mentored less senior employees
-  
-**Field Worker**. AgVenture/Spangler Seedtech. Jefferson, WI. June - August, 2007 - 2013
-
-  - Performed a variety of field work duties involving corn and soybeans
-  
-  - Supervised a team of other employees
-  
-# Side Projects
-
-  - Author and maintainer of the [`edgedata`](https://github.com/EeethB/edgedata) package on CRAN
-  
-  - Proficient with Git and Github workflows, including completion of the fantastic [ooloo.io](https://ooloo.io/project/github-flow) tutorial, which gives the experience of working with Git in a team environment
-  
-  - Set up a Shiny Server instance using Docker to host interactive R Shiny applications
-  
-  - Experienced with Windows command line and Linux terminal
-  
-  - Familiarity with C, C++, HTML, CSS, \LaTeX
-  
-  - Passed actuarial exams P, FM, IFM, SRM, and LTAM
+<!--   - Familiarity with C, C++, HTML, CSS, \LaTeX -->
 
 # Education
 
 **Bachelor of Science in Mathematics**. Mississippi State University, Starkville, MS. GPA 3.9/4.0. May 2017 
 
-  - Minor in Computer Science
-  
-  - Undergraduate research project in graph theory working with the independence polynomials of claw free graphs and trees: https://osebje.famnit.upr.si/~russ.woodroofe/ethan-brockmann.pdf 
+<!--   - Minor in Computer Science -->
 
-  - Split level user interface design class included building a real-use interface design for Fedex using Python
-  
-  - Grader, Math tutor, MSU Outdoor Adventures, and Starkville Russian Club
-
-# Other Skills
-
- - Attention to detail
- 
- - Strong technical review skills
- 
- - Experience working remote
- 
- - Independent and driven
- 
- - 4 years of high school Spanish, 4 semesters of college Russian, previously fluent in Lithuanian
+<!--   - Undergraduate research project in graph theory: https://osebje.famnit.upr.si/~russ.woodroofe/ethan-brockmann.pdf  -->
  
